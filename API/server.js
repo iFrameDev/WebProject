@@ -6,7 +6,7 @@ const db = require("./src/models");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:8080"
 };
 
 app.use(cors(corsOptions));
@@ -34,6 +34,7 @@ db.mongoose
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to application." });
 });
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

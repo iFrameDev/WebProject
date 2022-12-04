@@ -1,28 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
 
+import { useState } from "react"
+
+
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" 
-             alt="logo" />
-          
-<p>A simple React app.....</p>
   
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <form action="../../post" method="post" 
-              className="form">
-          <button type="submit">Connected?</button>
-        </form>
-      </header>
+  const [newname, setnewname] = useState("");
+  const [name, setname] = useState([]);
+
+  const HandleClick = (event) => {
+    event.preventDefault();
+
+   setname(current => [...current, newname])
+
+  }
+
+  const onchange = (event) => {
+    setnewname(event.target.value)
+  }
+
+  return (
+    <div>
+      <h1>Liste de prenom comme lena</h1>
+      <ul>
+        {name.map((elem, index) => (
+          <li key = {index}>{elem}</li>
+        ))}
+      </ul>
+      <form action="submit" onSubmit={HandleClick}>
+        <input type="text" onChange={onchange}  value = {newname} /> <button>Add</button>
+      </form>
     </div>
   );
 }
