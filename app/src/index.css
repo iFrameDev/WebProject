@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("./assets/images/HighresScreenshot00032.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: sepia(50%) hue-rotate(190deg) saturate(70%);
 
 
 }

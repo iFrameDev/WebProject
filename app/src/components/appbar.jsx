@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import HomeIcon from '@mui/icons-material/Home';
 
-const pages = ['News', 'PLAY SOCIAL LIFE'];
+const pages = ['News', 'Boutique', 'PLAY SOCIAL LIFE'];
 
 
 function ResponsiveAppBar() {
@@ -30,24 +30,27 @@ function ResponsiveAppBar() {
 
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "transparent"}} >
+    <AppBar  position="static" sx={{ bgcolor: "rgba(21,76,121,0.5)", borderBottom: 1, borderColor: 'white'}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         
-          <HomeIcon fontSize='large' color="disabled" sx={{  display: { xs: 'none', md: 'flex' }, mr: 1}} />
+          <HomeIcon color="white" sx={{  fontSize: 35, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
           <Typography
             variant="h6"
             noWrap
             component="a"
             href="/"
             sx={{
+              
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
-              fontWeight: 700,
+              fontWeight: "bold",
               letterSpacing: '.3rem',
-              color: 'black',
+              color: 'white',
               textDecoration: 'none',
+              fontSize: 30,
+
             }}
           >
             SOCIAL LIFE
@@ -102,18 +105,20 @@ function ResponsiveAppBar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'black',
+              color: 'white',
               textDecoration: 'none',
             }}
           >
-            LOGO
+            SOCIAL LIFE
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (
               <Button
+
+
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{my: 2, color: page === 'PLAY SOCIAL LIFE' ? 'white': 'black', display: 'block', bgcolor: page === 'PLAY SOCIAL LIFE' ? 'orange': 'none' }}
+                sx={{mx:1, my: 2,  fontWeight: "bold", color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', display: 'block', bgcolor: page === 'PLAY SOCIAL LIFE' ? 'rgba(21,76,121,0.5)': 'none' }}
               >
                 {page}
               </Button>
