@@ -8,7 +8,7 @@ body {
   background-image: url("./assets/images/HighresScreenshot00032.png");
   background-size: cover;
   background-repeat: no-repeat;
-  backdrop-filter: sepia(50%) hue-rotate(190deg) saturate(70%);
+  backdrop-filter: blur(0px) saturate(0%) brightness(20%);
 
 
 }

@@ -1,19 +1,15 @@
 import './App.css';
-
+import { Routes, Route } from 'react-router-dom';
 import { useState } from "react"
 import ResponsiveAppBar from './components/appbar';
-import ActionAreaCard from './components/DevblogCard';
-
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 
 
-const gridStyles = {
-  mx: 'auto',
-  maxWidth: 'md',
-  paddingRight: 1,
-  paddingBottom: 1
-};
+
+
+import News from './pages/News'
+import NotFound404 from './pages/NotFound404.js'
+
+
 
 
 function App() {
@@ -33,41 +29,19 @@ function App() {
   }
 
   return (
+
+    
     
     <div>
+
       <ResponsiveAppBar />
 
-      <Box sx={{ flexGrow: 1, p:15}}>
-
-        <Grid container sx={{...gridStyles, }} rowSpacing={2} spacing={1} justifyContent="flex-start" alignItems="center" >
-
-          <Grid item xl={4}>
-            <ActionAreaCard name='Motel and locations 1'/>
-
-          </Grid>
-          <Grid item xl={4}>
-            <ActionAreaCard name='Motel and locations 2'/>
-          </Grid>
-          <Grid item xl={4}>
-            <ActionAreaCard name='Motel and locations'/>
-          </Grid>
-          <Grid item xl={4}>
-            <ActionAreaCard name='Motel and locations'/>
-          </Grid>
-          <Grid item xl={4}>
-            <ActionAreaCard name='Motel and locations'/>
-          </Grid>
-          <Grid item xl={4}>
-            <ActionAreaCard name='Motel and locations'/>
-          </Grid>
-          <Grid item xl={4}>
-            <ActionAreaCard name='Motel and locations'/>
-          </Grid>
+      <Routes>
+          <Route path={'/news'} element={<News />} />
+          <Route path="*" element={<NotFound404 />} />
           
+       </Routes>
 
-        </Grid>
-
-      </Box>
       <h1>Liste de prenom comme lena caca</h1>
       <ul>
         {name.map((elem, index) => (

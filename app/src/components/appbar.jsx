@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 
 import MenuItem from '@mui/material/MenuItem';
 import HomeIcon from '@mui/icons-material/Home';
+import { Link } from 'react-router-dom';
 
 const pages = ['News', 'Boutique', 'PLAY SOCIAL LIFE'];
 
@@ -30,7 +31,7 @@ function ResponsiveAppBar() {
 
 
   return (
-    <AppBar  position="static" sx={{ bgcolor: "rgba(21,76,121,0.5)", borderBottom: 1, borderColor: 'white'}} >
+    <AppBar  position="static" sx={{ bgcolor: "rgba(0,0,0,0.2)", borderBottom: 1, borderColor: 'rgb(255,69,0)'}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         
@@ -113,15 +114,15 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (
-              <Button
-
-
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{mx:1, my: 2,  fontWeight: "bold", color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', display: 'block', bgcolor: page === 'PLAY SOCIAL LIFE' ? 'rgba(21,76,121,0.5)': 'none' }}
-              >
-                {page}
-              </Button>
+              <Link to={`/${page}`} >
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{mx:1, my: 2,  fontWeight: "bold", color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', display: 'block', bgcolor: page === 'PLAY SOCIAL LIFE' ? 'rgb(255,69,0)': 'none' }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
