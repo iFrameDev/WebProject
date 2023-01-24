@@ -8,6 +8,8 @@ import ResponsiveAppBar from './components/appbar';
 
 import News from './pages/News'
 import NotFound404 from './pages/NotFound404.js'
+import NewPages from './pages/NewPages';
+
 
 
 
@@ -39,8 +41,11 @@ function App() {
       <Routes>
           <Route path={'/news'} element={<News />} />
           <Route path="*" element={<NotFound404 />} />
+          <Route path='/Boutique' element={<NewPages title={'Motel and locations'.toUpperCase()}/>} />
           
        </Routes>
+
+      
 
       <h1>Liste de prenom comme lena caca</h1>
       <ul>
@@ -51,6 +56,7 @@ function App() {
       <form action="submit" onSubmit={HandleClick}>
         <input type="text" onChange={onchange}  value = {newname} /> <button>Add</button>
       </form>
+
     </div>
   );
 }

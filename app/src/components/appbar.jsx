@@ -31,11 +31,12 @@ function ResponsiveAppBar() {
 
 
   return (
-    <AppBar  position="static" sx={{ bgcolor: "rgba(0,0,0,0.2)", borderBottom: 1, borderColor: 'rgb(255,69,0)'}} >
+    <AppBar  position="static" sx={{ p:1,bgcolor: "rgba(255, 255, 255, 0.05)", borderBottom: 1, borderColor: 'white'}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         
-          <HomeIcon color="white" sx={{  fontSize: 35, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
+  
+          
           <Typography
             variant="h6"
             noWrap
@@ -46,11 +47,13 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
-              fontWeight: "bold",
               letterSpacing: '.3rem',
               color: 'white',
               textDecoration: 'none',
               fontSize: 30,
+              border: 2, borderColor: 'rgb(255,69,0)',
+              p:1
+              
 
             }}
           >
@@ -118,7 +121,7 @@ function ResponsiveAppBar() {
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{mx:1, my: 2,  fontWeight: "bold", color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', display: 'block', bgcolor: page === 'PLAY SOCIAL LIFE' ? 'rgb(255,69,0)': 'none' }}
+                  sx={{ letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', display: 'block', bgcolor: page === 'PLAY SOCIAL LIFE' ? 'rgb(255,69,0)': 'none' }}
                 >
                   {page}
                 </Button>

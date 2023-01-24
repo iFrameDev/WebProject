@@ -1,0 +1,135 @@
+import { Box } from "@mui/material";
+import React from "react";
+import Typography from '@mui/material/Typography';
+import HomeIcon from '@mui/icons-material/Home';
+
+
+
+
+
+const NewPages = (props) => (
+
+
+
+<Box sx={{ p:10, margin:'auto', maxWidth:'800px', display: 'flex', flexDirection: 'column', alignItems:'stretch', justifyContent: 'space-between'} }>
+
+    <Box  sx={{ pb:5} }  >
+        
+        <Typography sx={{borderBottom: 1, borderColor: 'rgba(255,69,0)'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
+
+          {props.title} 
+
+        </Typography> 
+        
+            
+    </Box>
+
+        
+
+    <Box mb={10} sx={{ p:2, border: 1, borderColor: 'white',bgcolor: 'rgba(255, 255, 255, 0.1)'} }  >
+
+      <Typography variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '15px'}} >
+
+        THE WEAPONS
+
+      </Typography> 
+
+      <img  style={{ minWidth: '200px', maxWidth: '770px' }} src="images/HighresScreenshot00034.png" alt="social life"/> 
+
+        <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum pretium, risus velit congue mi, vel tincidunt augue velit vel nunc. Sed vel tincidunt magna. Sed suscipit ex quis neque luctus, at tempor metus iaculis. Nullam aliquam aliquam dolor, sit amet ornare nulla. Praesent quis tempus elit. Sed auctor, augue id bibendum pretium, risus velit congue mi, vel tincidunt augue velit vel nunc. Sed vel tincidunt magna. Sed suscipit ex quis neque luctus, at tempor metus iaculis. Nullam aliquam aliquam dolor, sit amet ornare nulla. Praesent quis tempus elit. Sed auctor, augue id bibendum pretium, risus velit congue mi, vel tincidunt augue velit vel nunc. Sed vel tincidunt magna. Sed suscipit ex quis neque luctus, at tempor metus iaculis. Nullam aliquam aliquam dolor, sit amet ornare nulla. Praesent quis tempus elit.
+              
+        </Typography> 
+    </Box>
+
+    <Box mb={10} sx={{ p:2, border: 1, borderColor: 'white', bgcolor: 'rgba(255, 255, 255, 0.1)'} }  >
+      
+    <Box mb={10} sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+
+        <Typography variant="overline" display="flex" component="div" style={{ color:'white' ,fontSize: '15px'}} >
+
+        <HomeIcon color="white" sx={{  fontSize: 35, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />Features
+
+        </Typography> 
+
+
+        <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
+
+          <li>first item</li>
+          <li>second item</li>
+          <li>third item</li> 
+
+        </Typography> 
+
+    </Box>
+
+
+      <Box mb={10} sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+
+        <Typography variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '15px'}} >
+
+        Improvements
+
+        </Typography> 
+
+
+        <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
+
+          <li>first item</li>
+          <li>second item</li>
+          <li>third item</li> 
+
+        </Typography> 
+
+        </Box>
+
+        <Box mb={10} sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+
+        <Typography variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '15px'}} >
+
+        Fixed
+
+        </Typography> 
+
+        <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
+
+          <li>first item</li>
+          <li>second item</li>
+          <li>third item</li> 
+
+        </Typography> 
+        </Box>
+
+        <Box mb={10} sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+
+        <Typography variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '15px'}} >
+
+        Removed
+
+        </Typography> 
+
+        <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
+
+          <li>first item</li>
+          <li>second item</li>
+          <li>third item</li> 
+
+        </Typography> 
+        </Box>
+
+        </Box>
+
+
+</Box>
+
+
+
+  
+  
+
+
+
+);
+  
+  export default NewPages;

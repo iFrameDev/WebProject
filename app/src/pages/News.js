@@ -1,7 +1,8 @@
 import React from "react";
-import Box from '@mui/material/Box';
+import { Box } from "@mui/material";
 import Grid from '@mui/material/Grid';
 import ActionAreaCard from '../components/DevblogCard';
+
 
 const gridStyles = {
     mx: 'auto',
@@ -12,8 +13,8 @@ const gridStyles = {
   
 
 const About = () => (
-  <div>
-          <Box sx={{ flexGrow: 1, p:15}}>
+
+          <Box sx={{  flexGrow: 1, p:15}}>
 
 <Grid container sx={{...gridStyles, }} rowSpacing={2} spacing={1} justifyContent="flex-start" alignItems="center" >
 
@@ -44,7 +45,7 @@ const About = () => (
 </Grid>
 
 </Box>
-  </div>
+
 );
 
 export default About;
