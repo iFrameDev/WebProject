@@ -11,10 +11,11 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 
 import MenuItem from '@mui/material/MenuItem';
-import HomeIcon from '@mui/icons-material/Home';
+
 import { Link } from 'react-router-dom';
 
 const pages = ['News', 'Boutique', 'PLAY SOCIAL LIFE'];
+const path = ['News', 'Boutique', 'login'];
 
 
 function ResponsiveAppBar() {
@@ -31,7 +32,7 @@ function ResponsiveAppBar() {
 
 
   return (
-    <AppBar  position="static" sx={{ p:1,bgcolor: "rgba(255, 255, 255, 0.05)", borderBottom: 1, borderColor: 'white'}} >
+    <AppBar  position="static" sx={{ p:2, boxShadow:'none', bgcolor:'transparent'}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         
@@ -51,7 +52,7 @@ function ResponsiveAppBar() {
               color: 'white',
               textDecoration: 'none',
               fontSize: 30,
-              border: 2, borderColor: 'rgb(255,69,0)',
+              border: 2, borderColor: 'white',
               p:1
               
 
@@ -96,7 +97,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <HomeIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+
           <Typography
             variant="h5"
             noWrap
@@ -104,24 +105,26 @@ function ResponsiveAppBar() {
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: 'flex', md: 'none', justifyContent: 'center' },
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'white',
               textDecoration: 'none',
+              border: 2, borderColor: 'white',
+              p:1
             }}
           >
             SOCIAL LIFE
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
-            {pages.map((page) => (
-              <Link to={`/${page}`} >
+            {pages.map((page, index) => (
+              <Link key={index} to={`/${path[index]}`} >
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', display: 'block', bgcolor: page === 'PLAY SOCIAL LIFE' ? 'rgb(255,69,0)': 'none' }}
+                  sx={{ letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', display: 'block',  border: page === 'PLAY SOCIAL LIFE' ? 2 : 'none', borderColor: page === 'PLAY SOCIAL LIFE' ? 'white': 'none' }}
                 >
                   {page}
                 </Button>

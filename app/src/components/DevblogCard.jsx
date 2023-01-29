@@ -11,7 +11,7 @@ export default function ActionAreaCard(props) {
 
 
   return (
-    <Card sx={{ bgcolor: "rgba(255, 255, 255, 0.1)" , borderBottom: 1, borderColor: 'white'}}>
+    <Card sx={{ bgcolor: "rgba(255, 255, 255, 0.1)" }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -21,13 +21,14 @@ export default function ActionAreaCard(props) {
         />
         <CardContent>
         
-          <Typography color='white' gutterBottom variant="h5" component="div" >
+          <Typography color='white' gutterBottom variant="overline" component="div" style={{ fontSize: '15px'}}>
            {props.name} 
           </Typography> 
           <Typography variant="body2" color="grey">
             Lizards are a widespread group of squamate reptiles, with over 6,000
             species, ranging across all continents except Antarctica
           </Typography>
+
         </CardContent>
       </CardActionArea>
     </Card>

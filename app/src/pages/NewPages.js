@@ -1,7 +1,11 @@
 import { Box } from "@mui/material";
 import React from "react";
 import Typography from '@mui/material/Typography';
-import HomeIcon from '@mui/icons-material/Home';
+import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
+import UpgradeRoundedIcon from '@mui/icons-material/UpgradeRounded';
+import HandymanRoundedIcon from '@mui/icons-material/HandymanRounded';
+import RemoveCircleOutlineRoundedIcon from '@mui/icons-material/RemoveCircleOutlineRounded';
+
 
 
 
@@ -11,11 +15,11 @@ const NewPages = (props) => (
 
 
 
-<Box sx={{ p:10, margin:'auto', maxWidth:'800px', display: 'flex', flexDirection: 'column', alignItems:'stretch', justifyContent: 'space-between'} }>
+<Box  sx={{  p:10, margin:'auto', maxWidth:'800px', display: 'flex', flexDirection: 'column', alignItems:'stretch', justifyContent: 'space-between'} }>
 
     <Box  sx={{ pb:5} }  >
         
-        <Typography sx={{borderBottom: 1, borderColor: 'rgba(255,69,0)'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
+        <Typography sx={{borderBottom: 1, borderColor: 'rgb(255,69,0)'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
 
           {props.title} 
 
@@ -26,7 +30,7 @@ const NewPages = (props) => (
 
         
 
-    <Box mb={10} sx={{ p:2, border: 1, borderColor: 'white',bgcolor: 'rgba(255, 255, 255, 0.1)'} }  >
+    <Box mb={10} sx={{ p:2, border: 1, borderColor: 'rgb(56,56,56)'} }  >
 
       <Typography variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '15px'}} >
 
@@ -43,31 +47,35 @@ const NewPages = (props) => (
         </Typography> 
     </Box>
 
-    <Box mb={10} sx={{ p:2, border: 1, borderColor: 'white', bgcolor: 'rgba(255, 255, 255, 0.1)'} }  >
+    <Box sx={{ p:2, border: 1, borderColor: 'rgb(56,56,56)'} }  >
       
-    <Box mb={10} sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+        <Box sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
 
-        <Typography variant="overline" display="flex" component="div" style={{ color:'white' ,fontSize: '15px'}} >
+            <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
 
-        <HomeIcon color="white" sx={{  fontSize: 35, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />Features
+              <AddCircleOutlineRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
+            
+              Features
 
-        </Typography> 
-
-
-        <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
-
-          <li>first item</li>
-          <li>second item</li>
-          <li>third item</li> 
-
-        </Typography> 
-
-    </Box>
+            </Typography> 
 
 
-      <Box mb={10} sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+            <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
 
-        <Typography variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '15px'}} >
+              <li>first item</li>
+              <li>second item</li>
+              <li>third item</li> 
+
+            </Typography> 
+
+        </Box>
+
+
+      <Box sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+
+      <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
+
+<UpgradeRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
 
         Improvements
 
@@ -84,9 +92,11 @@ const NewPages = (props) => (
 
         </Box>
 
-        <Box mb={10} sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+        <Box sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
 
-        <Typography variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '15px'}} >
+        <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
+
+          <HandymanRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
 
         Fixed
 
@@ -101,9 +111,11 @@ const NewPages = (props) => (
         </Typography> 
         </Box>
 
-        <Box mb={10} sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+        <Box sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
 
-        <Typography variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '15px'}} >
+        <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
+
+          <RemoveCircleOutlineRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
 
         Removed
 

@@ -9,6 +9,7 @@ import ResponsiveAppBar from './components/appbar';
 import News from './pages/News'
 import NotFound404 from './pages/NotFound404.js'
 import NewPages from './pages/NewPages';
+import Login from './pages/Login';
 
 
 
@@ -40,6 +41,7 @@ function App() {
 
       <Routes>
           <Route path={'/news'} element={<News />} />
+          <Route path={'/login'} element={<Login />} />
           <Route path="*" element={<NotFound404 />} />
           <Route path='/Boutique' element={<NewPages title={'Motel and locations'.toUpperCase()}/>} />
           
