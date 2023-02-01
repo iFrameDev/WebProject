@@ -38,13 +38,22 @@ const CssTextfield = styled(TextField)({
 });
 
 
-export default function InputAdornments() {
+export default function LoginForm() {
+  const [username, setUsername] = useState("");
+  const [usernameError, setUsernameError] = useState(false);
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = event => {
     setPassword(event.target.value);
 
+  };
+
+  const handleChangeUsername = event =>{
+
+    setUsername(event.target.value);
+
+    
   };
 
   const handleClickShowPassword = () => {
@@ -57,11 +66,13 @@ export default function InputAdornments() {
 
 
             <CssTextfield 
-
+                error={false}
+                value={username}
+                onChange={handleChangeUsername}
                 label="Username"
                 id="outlined-adornment-password"
+                helperText={usernameError ? "Il vous faut un minimum de 8 caracteres" : ""}
                 sx={{ color : 'red' ,m: 1, width: '25ch'}}
-
             />
 
             <CssTextfield

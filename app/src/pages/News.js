@@ -29,7 +29,7 @@ const About = () => (
 
 <Grid container sx={{...gridStyles, p:1, border: 1, borderColor: 'rgb(56,56,56)'}} spacing={3}>
 
-  <Grid item xl={4}>
+  <Grid item xl={12}>
     <ActionAreaCard name='Motel and locations 1'/>
 
   </Grid>
