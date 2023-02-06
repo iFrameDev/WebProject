@@ -8,10 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./assets/images/HighresScreenshot00032.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  backdrop-filter: blur(0px) saturate(0%) brightness(20%);
+  background-color: white;
 }
 
 code {

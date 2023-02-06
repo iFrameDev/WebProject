@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
+import HouseIcon from '@mui/icons-material/House';
 
 import Button from '@mui/material/Button';
 
@@ -32,12 +33,12 @@ function ResponsiveAppBar() {
 
 
   return (
-    <AppBar  position="static" sx={{ p:2, boxShadow:'none', bgcolor:'transparent'}} >
+    <AppBar  position="static" sx={{ borderBottom: 1, borderColor: 'rgb(228,227,248)',p:1, bgcolor:'white'}} style={{boxShadow: 'none'}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         
-  
-          
+  <Box sx={{display:'flex', flexDirection:'row',justifyContent: 'center', alignItems: 'center',borderBottom: 2}}>
+        <HouseIcon sx={{fontSize: '40px', color:'rgb(112,101,240)'}}/>
           <Typography
             variant="h6"
             noWrap
@@ -48,19 +49,19 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
-              letterSpacing: '.3rem',
-              color: 'white',
+              fontWeight: 'bold',
+
+              color: 'rgb(112,101,240)',
               textDecoration: 'none',
-              fontSize: 30,
-              border: 2, borderColor: 'white',
-              p:1
-              
+              fontSize: 35,
+              p:1,
 
             }}
           >
+            
             SOCIAL LIFE
           </Typography>
-
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -110,7 +111,7 @@ function ResponsiveAppBar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'white',
+              color: 'rgb(112,101,240)',
               textDecoration: 'none',
               border: 2, borderColor: 'white',
               p:1
@@ -130,6 +131,22 @@ function ResponsiveAppBar() {
                 </Button>
               </Link>
             ))}
+              <Link to={`/login`} >
+                  <Button
+                    sx={{ fontWeight: 'bold', bgcolor:'white', letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: 'rgb(112,101,240)', display: 'block',  border:  2, borderColor: 'rgb(112,101,240)'}}
+                  >
+                    Login
+                  </Button>
+              </Link>
+
+              <Link to={`/register`} >
+                <Button
+                    sx={{ fontWeight: 'bold', bgcolor:'rgb(112,101,240)', letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: 'white', display: 'block',  border:  2, borderColor: 'white'}}
+                  >
+                    Sign up
+                </Button>
+              </Link>
+
           </Box>
         </Toolbar>
       </Container>

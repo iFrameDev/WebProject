@@ -19,7 +19,7 @@ const About = () => (
 
           <Box  sx={{ pb:5, } }  >
             
-            <Typography sx={{borderBottom: 1, borderColor: 'rgb(255,69,0)'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
+            <Typography sx={{fontWeight: 'bold',borderBottom: 1, borderColor: 'rgb(228,227,248)'}} variant="overline" display="block" component="div" style={{ color:'rgb(112,101,240)' ,fontSize: '17px'}} >
 
             news
 
@@ -27,30 +27,27 @@ const About = () => (
     
         </Box>
 
-<Grid container sx={{...gridStyles, p:1, border: 1, borderColor: 'rgb(56,56,56)'}} spacing={3}>
+<Grid container sx={{...gridStyles, p:1}} spacing={3}>
 
-  <Grid item xl={12}>
+  <Grid item xl={6}>
     <ActionAreaCard name='Motel and locations 1'/>
-
   </Grid>
-  <Grid item xl={4}>
+  <Grid item xl={6}>
     <ActionAreaCard name='Motel and locations 2'/>
   </Grid>
-  <Grid item xl={4}>
+  <Grid item xl={6}>
     <ActionAreaCard name='Motel and locations'/>
   </Grid>
-  <Grid item xl={4}>
+  <Grid item xl={6}>
     <ActionAreaCard name='Motel and locations'/>
   </Grid>
-  <Grid item xl={4}>
+  <Grid item xl={6}>
     <ActionAreaCard name='Motel and locations'/>
   </Grid>
-  <Grid item xl={4}>
+  <Grid item xl={6}>
     <ActionAreaCard name='Motel and locations'/>
   </Grid>
-  <Grid item xl={4}>
-    <ActionAreaCard name='Motel and locations'/>
-  </Grid>
+
   
 
 </Grid>
