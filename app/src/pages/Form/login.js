@@ -12,11 +12,11 @@ const LoginPage = () => (
 
     <Box sx={{p:15}}>
 
-        <Box sx={{border: 2, borderColor: 'rgb(228,227,248)',p:15, display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', margin:'auto', height:'100px', minWidth:'400px', maxWidth:'500px'}}>
+        <Box sx={{p:15, display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', margin:'auto', height:'100px', minWidth:'400px', maxWidth:'500px'}}>
 
             <Box  sx={{ pb:5 }}  >
             
-                <Typography sx={{borderBottom: 1, borderColor: 'rgb(228,227,248)'}} variant="overline" display="block" component="div" style={{ color:'rgb(112,101,240)' ,fontSize: '20px'}} >
+                <Typography sx={{borderBottom: 1, borderColor: 'rgb(228,227,248)'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
 
                 login
 
@@ -29,7 +29,7 @@ const LoginPage = () => (
 
             <Box sx={{ display:'flex', flexDirection: 'row'}}>
 
-            <Button onClick={sayHello} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  1 , borderColor: 'rgb(112,101,240)', bgcolor:'rgb(112,101,240)'}}>
+            <Button onClick={sayHello} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'rgb(112,101,240)',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  1 , borderColor: 'rgb(112,101,240)', bgcolor:'white'}}>
 
                   CONNEXION
 

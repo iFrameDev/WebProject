@@ -33,12 +33,12 @@ function ResponsiveAppBar() {
 
 
   return (
-    <AppBar  position="static" sx={{ borderBottom: 1, borderColor: 'rgb(228,227,248)',p:1, bgcolor:'white'}} style={{boxShadow: 'none'}} >
+    <AppBar  position="static" sx={{p:1, bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         
-  <Box sx={{display:'flex', flexDirection:'row',justifyContent: 'center', alignItems: 'center',borderBottom: 2}}>
-        <HouseIcon sx={{fontSize: '40px', color:'rgb(112,101,240)'}}/>
+  <Box sx={{display:'flex', flexDirection:'row',justifyContent: 'center', alignItems: 'center',borderBottom: 2, borderColor: 'white'}}>
+        <HouseIcon sx={{fontSize: '50px', color:'white'}}/>
           <Typography
             variant="h6"
             noWrap
@@ -51,9 +51,9 @@ function ResponsiveAppBar() {
               fontFamily: 'monospace',
               fontWeight: 'bold',
 
-              color: 'rgb(112,101,240)',
+              color: 'white',
               textDecoration: 'none',
-              fontSize: 35,
+              fontSize: 50,
               p:1,
 
             }}
@@ -133,7 +133,7 @@ function ResponsiveAppBar() {
             ))}
               <Link to={`/login`} >
                   <Button
-                    sx={{ fontWeight: 'bold', bgcolor:'white', letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: 'rgb(112,101,240)', display: 'block',  border:  2, borderColor: 'rgb(112,101,240)'}}
+                    sx={{ fontWeight: 'bold', bgcolor:'white', letterSpacing: '.1rem',fontSize: 12, mx:1, my: 2, color: 'rgb(112,101,240)', display: 'block'}}
                   >
                     Login
                   </Button>
@@ -141,7 +141,7 @@ function ResponsiveAppBar() {
 
               <Link to={`/register`} >
                 <Button
-                    sx={{ fontWeight: 'bold', bgcolor:'rgb(112,101,240)', letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: 'white', display: 'block',  border:  2, borderColor: 'white'}}
+                    sx={{ fontWeight: 'bold', bgcolor:'rgb(112,101,240)', letterSpacing: '.1rem',fontSize: 12, mx:1, my: 2, color: 'white', display: 'block'}}
                   >
                     Sign up
                 </Button>

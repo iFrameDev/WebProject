@@ -11,7 +11,7 @@ export default function ActionAreaCard(props) {
 
 
   return (
-    <Card sx={{ height:'350px', bgcolor: "rgb(255, 255, 255)", boxShadow: "0px 10px 20px #888888"}}>
+    <Card sx={{ height:'350px', bgcolor: "rgb(255, 255, 255)"}}>
       <CardActionArea>
         <CardMedia
           component="img"
