@@ -45,7 +45,7 @@ export default function PasswordForm (){
                             onClick={handleClickShowPassword}
                             onMouseDown={(event)=>event.preventDefault()}
                             edge="end"
-                            sx={{ color : 'rgb(112,101,240)'}}
+                            sx={{ color : 'white'}}
                         >
                         {showPassword ? <VisibilityOff /> : <Visibility />}
                         </IconButton>

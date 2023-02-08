@@ -4,21 +4,21 @@ import TextField from '@mui/material/TextField';
 
 const CssTextfield = styled(TextField)({
   '& label.Mui-focused': {
-    color: 'rgb(112,101,240)',
+    color: 'white',
   },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
       borderColor: 'grey',
     },
     '&:hover fieldset': {
-      borderColor: 'rgb(112,101,240)',
+      borderColor: 'grey',
     },
     '&.Mui-focused fieldset': {
-      borderColor: 'rgb(112,101,240)',
+      borderColor: 'white',
       
     },    
     'fieldset': {
-      borderColor: 'rgb(112,101,240)',
+      borderColor: 'white',
     },
   },
   '& p':{
@@ -28,7 +28,7 @@ const CssTextfield = styled(TextField)({
   color: 'black',
 },
   label: {
-  color: 'rgb(228,227,248)',
+  color: 'white',
   },
 
 });

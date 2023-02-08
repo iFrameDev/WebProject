@@ -37,7 +37,7 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         
-  <Box sx={{display:'flex', flexDirection:'row',justifyContent: 'center', alignItems: 'center',borderBottom: 2, borderColor: 'white'}}>
+  <Box sx={{display:'flex', flexDirection:'row',justifyContent: 'center', alignItems: 'center'}}>
         <HouseIcon sx={{fontSize: '50px', color:'white'}}/>
           <Typography
             variant="h6"
@@ -133,7 +133,7 @@ function ResponsiveAppBar() {
             ))}
               <Link to={`/login`} >
                   <Button
-                    sx={{ fontWeight: 'bold', bgcolor:'white', letterSpacing: '.1rem',fontSize: 12, mx:1, my: 2, color: 'rgb(112,101,240)', display: 'block'}}
+                    sx={{ fontWeight: 'bold', border: 2, bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'white', display: 'block'}}
                   >
                     Login
                   </Button>
@@ -141,7 +141,7 @@ function ResponsiveAppBar() {
 
               <Link to={`/register`} >
                 <Button
-                    sx={{ fontWeight: 'bold', bgcolor:'rgb(112,101,240)', letterSpacing: '.1rem',fontSize: 12, mx:1, my: 2, color: 'white', display: 'block'}}
+                    sx={{ fontWeight: 'bold', border: 2, bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'white', display: 'block'}}
                   >
                     Sign up
                 </Button>

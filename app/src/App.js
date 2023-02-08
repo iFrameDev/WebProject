@@ -23,7 +23,7 @@ function App() {
 
     
     
-    <Box sx={{ height: '100vh', p:3, bgcolor:'rgb(112 101 240 / 37%)'}} >
+    <Box sx={{ height: '100vh', p:3, bgcolor:'rgb(0 0 0 / 60%)'}} >
 
       <Box sx={{margin:'auto', height: '100vh', p:2, zIndex: 10,bgcolor:'transparent'}}>
         <ResponsiveAppBar />
