@@ -2,7 +2,9 @@ import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 
 
-const CssTextfield = styled(TextField)({
+const TextfieldInput = styled(TextField)({
+
+
   '& label.Mui-focused': {
     color: 'white',
   },
@@ -25,7 +27,7 @@ const CssTextfield = styled(TextField)({
     color:'red',
   },
   input: {
-  color: 'black',
+  color: 'white',
 },
   label: {
   color: 'white',
@@ -33,4 +35,12 @@ const CssTextfield = styled(TextField)({
 
 });
 
-export default CssTextfield;
+export default function CssTextfield(props) {
+  return (
+
+      <TextfieldInput label={props.label}/>
+);
+
+  }
+
+

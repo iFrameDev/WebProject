@@ -5,7 +5,7 @@ import { useState } from "react"
 
 
 
-export default function UsernameForm() {
+export default function UsernameForm(props) {
 
 
     const regEx = /^.{8,20}$/;
@@ -27,10 +27,10 @@ export default function UsernameForm() {
 
         <CssTextfield 
         autoComplete='off'
+        label={props.label}
         value={username}
         onBlur={HandleBlur}
         onChange={handleChangeUsername}
-        label="Username"
         id="outlined-adornment-password"
         helperText={usernameError ? "Il vous faut un minimum de 8 caracteres" : ""}
         sx={{ color : 'red' ,m: 1, width: '25ch'}}

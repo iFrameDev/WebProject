@@ -11,20 +11,32 @@ export default function RegisterForm() {
 
   const [password, setPassword] = useState('');
 
-  function test(test){
-    alert('password : ' + test)
+  const handleChildInputChange = (value) => {
+    setPassword(value);
+  };
+
+  function test(password){
+    alert('mdp : '+ password)
   }
 
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', pb:3 }}>
+    <Box sx={{ display: 'flex', pb:3, flexDirection: 'column'}}>
 
-            <UsernameForm />
-            <PasswordForm value={password => setPassword(password)}/>
-            <PasswordForm />
+            <Box sx={{ display: 'flex', justifyContent:'center' }}>
+              <UsernameForm  label='Name'/>
+              <UsernameForm label='Last Name'/>
+            </Box>
+
+            
+
+            <Box sx={{ display: 'flex', justifyContent:'center'}}>
+              <PasswordForm label='Password' passwordValue={handleChildInputChange}/>
+              <PasswordForm label='Password confirmation'/>
+            </Box>
 
             <Box sx={{ display:'flex', flexDirection: 'row'}}>
 
-              <Button onClick={() => test(password)} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  1 , borderColor: 'rgb(112,101,240)', bgcolor:'rgb(112,101,240)'}}>
+              <Button onClick={() => test(password)} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  1 , borderColor: 'white'}}>
 
                 S'inscrire
 

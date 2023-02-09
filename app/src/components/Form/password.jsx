@@ -6,14 +6,14 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 
-export default function PasswordForm (){
+export default function PasswordForm (props){
 
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
   
     const handleChange = event => {
       setPassword(event.target.value);
-  
+      props.passwordValue(event.target.value)
     };
   
     const handleClickShowPassword = () => {
@@ -31,7 +31,7 @@ export default function PasswordForm (){
             id="outlined-adornment-passwordregergeg"
             type={showPassword ? "text" : "password"}
 
-            label="Password"
+            label={props.label}
             value={password}
             onChange={handleChange}
             sx={{m: 1, width: '25ch'}}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import Button from '@mui/material/Button';
+
 import RegisterForm from "../../components/register";
 import Typography from '@mui/material/Typography';
 
@@ -13,7 +13,7 @@ const Register = () => (
 
             <Box  sx={{ pb:5 }}  >
             
-                <Typography sx={{borderBottom: 1, borderColor: 'rgb(228,227,248)'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
+                <Typography sx={{borderBottom: 2, borderColor: 'rgb(228,227,248)'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
 
                 register
 
