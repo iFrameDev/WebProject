@@ -42,7 +42,7 @@ function ResponsiveAppBar() {
 
 
   return (
-    <AppBar  position="static" sx={{p:1, bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
+    <AppBar  position="static" sx={{bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         
@@ -58,8 +58,6 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
-              fontWeight: 'bold',
-
               color: 'white',
               textDecoration: 'none',
               fontSize: 50,
@@ -142,7 +140,7 @@ function ResponsiveAppBar() {
             )) : ''}
               <Link to={`/login`} >
                   <Button
-                    sx={{ fontWeight: 'bold', border: 2, bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'white', display: 'block'}}
+                    sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'white', display: 'block'}}
                   >
                     Login
                   </Button>
@@ -150,7 +148,7 @@ function ResponsiveAppBar() {
 
               <Link to={`/register`} >
                 <Button
-                    sx={{ fontWeight: 'bold', border: 2, bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'white', display: 'block'}}
+                    sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'white', display: 'block'}}
                   >
                     Sign up
                 </Button>

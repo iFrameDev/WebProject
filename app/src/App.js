@@ -25,7 +25,7 @@ function App() {
     
     <Box sx={{ height: '100vh', p:3, bgcolor:'rgb(0 0 0 / 20%)', backdropFilter: 'blur(10px)'}} >
 
-      <Box sx={{margin:'auto', height: '100vh', p:2, zIndex: 10,bgcolor:'transparent'}}>
+      <Box sx={{margin:'auto', height: '100vh', p:1, zIndex: 10,bgcolor:'transparent'}}>
         <ResponsiveAppBar />
 
         <Routes>

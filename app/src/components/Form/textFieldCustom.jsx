@@ -30,7 +30,7 @@ const TextfieldInput = styled(TextField)({
   color: 'white',
 },
   label: {
-  color: 'white',
+  color: 'grey',
   },
 
 });
@@ -38,7 +38,7 @@ const TextfieldInput = styled(TextField)({
 export default function CssTextfield(props) {
   return (
 
-      <TextfieldInput label={props.label}/>
+      <TextfieldInput sx = {{margin:'10px'}} label={props.label} type={props.type}/>
 );
 
   }
