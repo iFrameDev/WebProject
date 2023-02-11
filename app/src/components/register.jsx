@@ -20,7 +20,7 @@ export default function RegisterForm() {
   }
 
   return (
-    <Box sx={{ display: 'flex', pb:3, flexDirection: 'column'}}>
+    <Box sx={{ display: 'flex', flexDirection: 'column'}}>
 
             <Box sx={{ display: 'flex', justifyContent:'center' }}>
               <UsernameForm  label='Name'/>
