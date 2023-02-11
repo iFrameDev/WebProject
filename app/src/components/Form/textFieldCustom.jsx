@@ -38,7 +38,7 @@ const TextfieldInput = styled(TextField)({
 export default function CssTextfield(props) {
   return (
 
-      <TextfieldInput sx = {{margin:'10px'}} label={props.label} type={props.type}/>
+      <TextfieldInput sx = {{margin:'10px'}} label={props.label} type={props.type} InputProps = {props.InputProps}/>
 );
 
   }

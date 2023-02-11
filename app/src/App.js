@@ -9,8 +9,8 @@ import ResponsiveAppBar from './components/appbar';
 import News from './pages/News'
 import NotFound404 from './pages/NotFound404.js'
 import NewPages from './pages/NewPages';
-import Login from './pages/Form/Login';
-import Register from './pages/Form/Register'
+import Login from './pages/Form/login';
+import Register from './pages/Form/register'
 import { Box } from '@mui/system';
 
 
