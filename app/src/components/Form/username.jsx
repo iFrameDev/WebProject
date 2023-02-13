@@ -8,24 +8,32 @@ import { useState } from "react"
 export default function UsernameForm(props) {
 
 
+
     const regEx = /^.{8,20}$/;
+
     const [username, setUsername] = useState("");
     const [usernameError, setUsernameError] = useState(false);
 
     const handleChangeUsername = (event) =>{
 
         setUsername(event.target.value);
+        props.usernameValue(event.target.value)
         
     };
 
     const HandleBlur = (event) => {
 
-        return regEx.test(event.target.value) ? setUsernameError(false) : setUsernameError(true);
+        if(props.useRegex)
+        {
+            return regEx.test(event.target.value) ? setUsernameError(false) : setUsernameError(true);
+        }
+        
     }
 
     return (
 
-        <CssTextfield 
+        <CssTextfield
+  
         autoComplete='off'
         label={props.label}
         value={username}

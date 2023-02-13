@@ -4,46 +4,80 @@ import UsernameForm from "../components/Form/username";
 import PasswordForm from './Form/password';
 import { useState } from 'react';
 import { Button } from '@mui/material';
+import EmailForm from './Form/email';
 
 
 
 export default function RegisterForm() {
 
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    lastName: '',
+    password: '',
+    passwordConfirm: '',
+    email: '',
+    emailConfirm: ''
+  }); 
 
-  const handleChildInputChange = (value) => {
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const [name, setName] = useState ('');
+  const [lastName, setLastName] = useState ('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
+
+  const [email, setEmail] = useState('');
+  const [emailConfirm, setEmailConfirm] = useState('');
+
+  const [clicked, setClicked] = useState(false);
+
+
+
+  const handleNameValueChange = (newValue) => {
+    setName(newValue);
+  };
+  const handleLastNameValueChange = (newValue) => {
+    setLastName(newValue);
+  };
+
+  const handlepasswordChange = (value) => {
     setPassword(value);
   };
 
-  function test(password){
-    alert('mdp : '+ password)
+  const handleConfirmPasswordChange = (value) => {
+    setPasswordConfirm(value);
+  };
+
+  function ClientSendRegister(){
+
+    setClicked(true)
+
+    
+    
+    
   }
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column'}}>
+      
 
-            <Box sx={{ display: 'flex', justifyContent:'center' }}>
-              <UsernameForm  label='Name'/>
-              <UsernameForm label='Last Name'/>
-            </Box>
+            <UsernameForm label='Name' usernameValue = {handleNameValueChange}/>
+            <UsernameForm label='Last Name' usernameValue = {handleLastNameValueChange}/>
+            <PasswordForm label='Password' passwordValue={handlepasswordChange}/>
+            <PasswordForm label='Password Confirmation' passwordValue={handleConfirmPasswordChange}/>
+            <EmailForm label='Email' />
+            <EmailForm label='Email Confirmation'/>
+            <Button onClick={() => ClientSendRegister()} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  1 , borderColor: 'white'}}>
 
-            
+              Completed registration
 
-            <Box sx={{ display: 'flex', justifyContent:'center'}}>
-              <PasswordForm label='Password' passwordValue={handleChildInputChange}/>
-              <PasswordForm label='Password confirmation'/>
-            </Box>
+            </Button>
 
-            <Box sx={{ display:'flex', flexDirection: 'row'}}>
-
-              <Button onClick={() => test(password)} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  1 , borderColor: 'white'}}>
-
-                S'inscrire
-
-              </Button>
-
-            </Box>
-            
     </Box>
 );
 

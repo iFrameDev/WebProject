@@ -42,7 +42,7 @@ function ResponsiveAppBar() {
 
 
   return (
-    <AppBar  position="static" sx={{bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
+    <AppBar  position="static" sx={{pb:18,bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         

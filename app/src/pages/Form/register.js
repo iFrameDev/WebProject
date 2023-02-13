@@ -13,9 +13,9 @@ const Register = () => (
 
             <Box  sx={{ pb:5 }}  >
             
-                <Typography sx={{borderBottom: 2, borderColor: 'rgb(228,227,248)'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
+                <Typography sx={{borderBottom: 2, borderColor: 'white'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
 
-                register
+                Create Your Account
 
                 </Typography> 
         
