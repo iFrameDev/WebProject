@@ -30,7 +30,6 @@ export default function PasswordForm (props){
         
             id="outlined-adornment-passwordregergeg"
             type={showPassword ? "text" : "password"}
-
             label={props.label}
             value={password}
             onChange={handleChange}

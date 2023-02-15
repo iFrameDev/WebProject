@@ -5,6 +5,7 @@ import PasswordForm from './Form/password';
 import { useState } from 'react';
 import { Button } from '@mui/material';
 import EmailForm from './Form/email';
+import EmailForms from './Form/email copy';
 
 
 
@@ -22,7 +23,7 @@ export default function RegisterForm() {
   const handleChange = (event) => {
     setFormData({
       ...formData,
-      [event.target.name]: event.target.value
+      ['email']: event.target.value
     });
   };
 
@@ -63,9 +64,10 @@ export default function RegisterForm() {
   }
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column'}}>
-      
 
+    <Box sx={{ display: 'flex', flexDirection: 'column'}}>
+
+            <EmailForms value={formData.email} onChange={handleChange}/> 
             <UsernameForm label='Name' usernameValue = {handleNameValueChange}/>
             <UsernameForm label='Last Name' usernameValue = {handleLastNameValueChange}/>
             <PasswordForm label='Password' passwordValue={handlepasswordChange}/>
