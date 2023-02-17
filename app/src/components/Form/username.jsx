@@ -14,14 +14,14 @@ export default function UsernameForm(props) {
 
     const [usernameError, setUsernameError] = useState(false);
 
-   /* const HandleBlur = (event) => {
+    const HandleBlur = (event) => {
 
-        if(useRegex)
+        if(props.useRegex)
         {
             return regEx.test(event.target.value) ? setUsernameError(false) : setUsernameError(true);
         }
         
-    }*/
+    }
 
     return (
 
@@ -30,7 +30,7 @@ export default function UsernameForm(props) {
         name={props.name}
         label={props.label}
         value={props.value}
-        //onBlur={HandleBlur}
+        onBlur={HandleBlur}
         onChange={props.onChange}
 
         id="outlined-adornment-password"

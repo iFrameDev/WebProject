@@ -14,22 +14,16 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+
 
 const pages = ['News', 'Boutique', 'PLAY SOCIAL LIFE'];
 const path = ['News', 'Boutique', 'login'];
-
+const isVisibled = false;
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const [menuIsVisible, setMenuIsVisible] = useState(false);
 
-  const changeVisibilityMenu = () => {
-
-    setMenuIsVisible(!menuIsVisible)
-
-  }
 
 
   const handleOpenNavMenu = (event) => {
@@ -125,7 +119,7 @@ function ResponsiveAppBar() {
             SOCIAL LIFE
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
-            {menuIsVisible  ? pages.map((page, index) => (
+            {isVisibled  ? pages.map((page, index) => (
               <Link key={index} to={`/${path[index]}`} >
                 <Button
                   key={page}

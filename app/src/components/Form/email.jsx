@@ -5,18 +5,13 @@ import { useState } from "react"
 
 
 
-export default function EmailForm(props) {
+export default function EmailForms({label = 'Email', value, onChange, name}) {
 
 
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-    const [email, setEmail] = useState("");
+
     const [emailError, setemailError] = useState(false);
 
-    const handleChangeEmail = (event) =>{
-
-        setEmail(event.target.value);
-        
-    };
 
     const HandleBlur = (event) => {
 
@@ -26,15 +21,15 @@ export default function EmailForm(props) {
     return (
 
         <CssTextfield 
-        autoComplete='off'
-        label={props.label}
-        value={email}
-        onBlur={HandleBlur}
-        onChange={handleChangeEmail}
-        id="outlined-adornment-password"
-        helperText={emailError ? "Ce n'est pas une adresse email correct" : ""}
-        sx={{ color : 'red' ,m: 1, width: '25ch'}}
-    />
-
+            name={name}
+            label={label}
+            value={value}
+            onBlur={HandleBlur}
+            onChange={onChange}
+            id="outlined-adornment-password"
+            helperText={emailError ? "Ce n'est pas une adresse email correct" : ""}
+            autoComplete='off'
+            sx={{ color : 'red' ,m: 1, width: '25ch'}}
+        />
     );
 }

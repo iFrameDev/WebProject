@@ -8,14 +8,9 @@ import InputAdornment from '@mui/material/InputAdornment';
 
 export default function PasswordForm (props){
 
-    const [password, setPassword] = useState("");
+
     const [showPassword, setShowPassword] = useState(false);
-  
-    const handleChange = event => {
-      setPassword(event.target.value);
-      props.passwordValue(event.target.value)
-    };
-  
+
     const handleClickShowPassword = () => {
       setShowPassword(!showPassword);
     };
@@ -31,8 +26,9 @@ export default function PasswordForm (props){
             id="outlined-adornment-passwordregergeg"
             type={showPassword ? "text" : "password"}
             label={props.label}
-            value={password}
-            onChange={handleChange}
+            value={props.value}
+            onChange={props.onChange}
+            name={props.name}
             sx={{m: 1, width: '25ch'}}
 
             InputProps={{                
