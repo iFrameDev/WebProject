@@ -12,6 +12,8 @@ import EmailForms from './Form/email';
 
 export default function RegisterForm() {
 
+  const [error, setError] = useState({})
+
   const [formData, setFormData] = useState({
     name: '',
     lastName: '',
@@ -29,8 +31,31 @@ export default function RegisterForm() {
     });
   };
 
-  function ClientSendRegister(){
+  function HandleSubmit(){
 
+    const newError = {}
+
+    if(!formData.name){
+      newError.name = 'ce champ est requis'
+      setError(newError)
+    }
+    else{
+      newError.name = ''
+      setError(newError)
+    }
+
+    Object.keys(formData).forEach(key => {
+      const value = formData[key];
+
+      if(!value){
+        newError[key] = 'ce champ est requis'
+      }
+ 
+      setError(newError)
+
+
+      
+    });
 
     
   }
@@ -40,13 +65,19 @@ export default function RegisterForm() {
     <Box sx={{ display: 'flex', flexDirection: 'column'}}>
 
             
-            <UsernameForm label='Name' name='name' value={formData.name} onChange={handleChange} />
+            <UsernameForm label='Name' name='name' value={formData.name} onChange={handleChange}/>
+            {error.name}
             <UsernameForm label='Last Name' name='lastName' value={formData.lastName} onChange={handleChange} />
+            {error.lastName}
             <PasswordForm label='Password' name='password' value={formData.password} onChange={handleChange}/>
+            {error.password}
             <PasswordForm label='Password Confirmation' name='passwordConfirm' value={formData.passwordConfirm} onChange={handleChange}/>
-            <EmailForms name='email' value={formData.email} onChange={handleChange}/> 
-            <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation'/> 
-            <Button onClick={() => ClientSendRegister()} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  1 , borderColor: 'white'}}>
+            {error.passwordConfirm}
+            <EmailForms name='email' value={formData.email} onChange={handleChange}/>
+            {error.email} 
+            <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation'/>
+            {error.emailConfirm}
+            <Button onClick={() => HandleSubmit()} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  1 , borderColor: 'white'}}>
 
               Completed registration
 
