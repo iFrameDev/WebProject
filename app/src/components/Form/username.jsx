@@ -30,7 +30,7 @@ export default function UsernameForm(props) {
         name={props.name}
         label={props.label}
         value={props.value}
-        onBlur={HandleBlur}
+        onBlur={props.handleBlur}
         onChange={props.onChange}
 
         id="outlined-adornment-password"

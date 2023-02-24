@@ -7,16 +7,16 @@ import { Button } from '@mui/material';
 import UsernameForm from "../components/Form/username";
 import PasswordForm from './Form/password';
 import EmailForms from './Form/email';
-
+import FormError from './Form/formError';
 
 
 export default function RegisterForm() {
 
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
   const [error, setError] = useState({})
 
   const [formData, setFormData] = useState({
-    name: '',
-    lastName: '',
+    username: '',
     password: '',
     passwordConfirm: '',
     email: '',
@@ -31,16 +31,37 @@ export default function RegisterForm() {
     });
   };
 
+  const OnBlur = (event) => { 
+
+    switch(event.target.name)
+    {
+
+      default:
+      break;
+
+      case 'email':
+
+        if(!event.target.value){
+
+          emailRegex.test(event.target.value)
+        }
+                
+      break;
+
+    }
+
+  }
+
   function HandleSubmit(){
 
     const newError = {}
 
-    if(!formData.name){
-      newError.name = 'ce champ est requis'
+    if(!formData.username){
+      newError.username = 'ce champ est requis'
       setError(newError)
     }
     else{
-      newError.name = ''
+      newError.username = ''
       setError(newError)
     }
 
@@ -48,7 +69,7 @@ export default function RegisterForm() {
       const value = formData[key];
 
       if(!value){
-        newError[key] = 'ce champ est requis'
+        newError[key] = <FormError errorText='* Ce champ est requis'/>
       }
  
       setError(newError)
@@ -58,22 +79,23 @@ export default function RegisterForm() {
     });
 
     
+
+    
   }
+
 
   return (
 
     <Box sx={{ display: 'flex', flexDirection: 'column'}}>
 
             
-            <UsernameForm label='Name' name='name' value={formData.name} onChange={handleChange}/>
-            {error.name}
-            <UsernameForm label='Last Name' name='lastName' value={formData.lastName} onChange={handleChange} />
-            {error.lastName}
+            <UsernameForm label='Username' name='username' value={formData.username} onChange={handleChange}/>            
+            {error.username}
             <PasswordForm label='Password' name='password' value={formData.password} onChange={handleChange}/>
             {error.password}
             <PasswordForm label='Password Confirmation' name='passwordConfirm' value={formData.passwordConfirm} onChange={handleChange}/>
             {error.passwordConfirm}
-            <EmailForms name='email' value={formData.email} onChange={handleChange}/>
+            <EmailForms name='email' value={formData.email} onChange={handleChange} onBlur={OnBlur}/>
             {error.email} 
             <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation'/>
             {error.emailConfirm}
@@ -82,6 +104,7 @@ export default function RegisterForm() {
               Completed registration
 
             </Button>
+
 
     </Box>
 );

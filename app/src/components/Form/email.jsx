@@ -5,7 +5,7 @@ import { useState } from "react"
 
 
 
-export default function EmailForms({label = 'Email', value, onChange, name}) {
+export default function EmailForms({label = 'Email', value, onChange, name, onBlur}) {
 
 
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -24,7 +24,7 @@ export default function EmailForms({label = 'Email', value, onChange, name}) {
             name={name}
             label={label}
             value={value}
-            onBlur={HandleBlur}
+            onBlur={onBlur}
             onChange={onChange}
             id="outlined-adornment-password"
             helperText={emailError ? "Ce n'est pas une adresse email correct" : ""}
