@@ -12,6 +12,7 @@ import FormError from './Form/formError';
 
 export default function RegisterForm() {
 
+  const newError = {}
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
   const [error, setError] = useState({})
 
@@ -41,11 +42,10 @@ export default function RegisterForm() {
 
       case 'email':
 
-        if(!event.target.value){
-
-          emailRegex.test(event.target.value)
+        if(event.target.value){
+          emailRegex.test(event.target.value) ? setError({...error, 'email' : ''}) : setError({...error, 'email' : <FormError errorText="Cette adresse Email n'est pas valide"/>})           
         }
-                
+
       break;
 
     }
@@ -54,21 +54,12 @@ export default function RegisterForm() {
 
   function HandleSubmit(){
 
-    const newError = {}
-
-    if(!formData.username){
-      newError.username = 'ce champ est requis'
-      setError(newError)
-    }
-    else{
-      newError.username = ''
-      setError(newError)
-    }
-
     Object.keys(formData).forEach(key => {
       const value = formData[key];
 
       if(!value){
+
+        //setError({...error, [key] : <FormError errorText='* Ce champ est requis'/>})
         newError[key] = <FormError errorText='* Ce champ est requis'/>
       }
  
