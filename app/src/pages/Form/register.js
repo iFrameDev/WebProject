@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 
 const Register = () => (
 
-    <Box sx={{p:15}}>
+    <Box>
 
         <Box sx={{p:15, display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', margin:'auto', height:'100px', minWidth:'400px', maxWidth:'500px'}}>
 

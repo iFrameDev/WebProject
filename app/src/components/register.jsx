@@ -48,6 +48,21 @@ export default function RegisterForm() {
 
       break;
 
+      case 'emailConfirm':
+
+        if(event.target.value){
+
+          if(emailRegex.test(event.target.value))
+          {
+            if(formData.email !== formData.emailConfirm) { setError({...error, 'emailConfirm': <FormError errorText="Cette adresse email n'est pas identique a l'autre"/>}) }
+          else { setError({...error, 'emailConfirm': ''})}
+          }  
+          else {
+            setError({...error, 'emailConfirm': <FormError errorText='Cette adresse email est incorrecte'/>}) 
+          }
+        }
+      break;
+
     }
 
   }
@@ -88,7 +103,7 @@ export default function RegisterForm() {
             {error.passwordConfirm}
             <EmailForms name='email' value={formData.email} onChange={handleChange} onBlur={OnBlur}/>
             {error.email} 
-            <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation'/>
+            <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation' onBlur={OnBlur}/>
             {error.emailConfirm}
             <Button onClick={() => HandleSubmit()} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  1 , borderColor: 'white'}}>
 
