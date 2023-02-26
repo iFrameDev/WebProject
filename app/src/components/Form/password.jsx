@@ -14,7 +14,6 @@ export default function PasswordForm (props){
     const handleClickShowPassword = () => {
       setShowPassword(!showPassword);
     };
-  
 
     return(
 
@@ -29,6 +28,7 @@ export default function PasswordForm (props){
             value={props.value}
             onChange={props.onChange}
             name={props.name}
+            onBlur={props.handleBlur}
             sx={{m: 1, width: '25ch'}}
 
             InputProps={{                

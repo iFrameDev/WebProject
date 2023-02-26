@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import Box from '@mui/material/Box';
 
 import RegisterForm from "../../components/register";
 import Typography from '@mui/material/Typography';
@@ -7,24 +7,22 @@ import Typography from '@mui/material/Typography';
 
 const Register = () => (
 
-    <Box>
 
-        <Box sx={{p:15, display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', margin:'auto', height:'100px', minWidth:'400px', maxWidth:'500px'}}>
 
-            <Box  sx={{ pb:5 }}  >
-            
-                <Typography sx={{borderBottom: 2, borderColor: 'white'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
+    <Box sx={{display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', margin:'auto', minWidth:'400px'}}>
 
-                Create Your Account
 
-                </Typography> 
         
-            </Box>
+            <Typography sx={{mb:3, borderBottom: 2, borderColor: 'white'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '17px'}} >
 
-            <RegisterForm />
+            Create Your Account
 
-        </Box>
-        
+            </Typography> 
+    
+
+
+        <RegisterForm />
+
     </Box>
 
 );

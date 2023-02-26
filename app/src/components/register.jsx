@@ -12,82 +12,127 @@ import FormError from './Form/formError';
 
 export default function RegisterForm() {
 
-  const newError = {}
-  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-  const [error, setError] = useState({})
 
-  const [formData, setFormData] = useState({
-    username: '',
-    password: '',
-    passwordConfirm: '',
-    email: '',
-    emailConfirm: ''
-  }); 
+    const userRegex = /^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{4,20}$/;
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.{8,})/;
+    const [error, setError] = useState({})
 
-  const handleChange = (event) => {
+    const [formData, setFormData] = useState({
+        username: '',
+        password: '',
+        passwordConfirm: '',
+        email: '',
+        emailConfirm: ''
+    }); 
 
-    setFormData({
-      ...formData,
-      [event.target.name] : event.target.value
-    });
-  };
+    const handleChange = (event) => {
 
-  const OnBlur = (event) => { 
+        setFormData({...formData, [event.target.name] : event.target.value});
 
-    switch(event.target.name)
-    {
 
-      default:
-      break;
+    };
 
-      case 'email':
+    const OnBlur = (event) => { 
 
-        if(event.target.value){
-          emailRegex.test(event.target.value) ? setError({...error, 'email' : ''}) : setError({...error, 'email' : <FormError errorText="Cette adresse Email n'est pas valide"/>})           
+
+
+        switch(event.target.name)
+        {
+
+            default:
+            break;
+
+            case 'email':
+
+                if(event.target.value){
+
+                    emailRegex.test(event.target.value) ? setError({...error, 'email' : ''}) : setError({...error, 'email' : <FormError errorText="Cette adresse Email n'est pas valide"/>})           
+                }
+
+            break;
+
+            case 'emailConfirm':
+
+                if(event.target.value){
+
+                    if(emailRegex.test(event.target.value)){
+
+                        if(formData.email !== formData.emailConfirm) { setError({...error, 'emailConfirm': <FormError errorText="Cette adresse email n'est pas identique a l'autre"/>}) }
+                        
+                        else { 
+                            
+                            setError({...error, 'emailConfirm': ''})
+                        }
+                    }  
+                    else {
+                        
+                        setError({...error, 'emailConfirm': <FormError errorText='Cette adresse email est incorrecte'/>}) 
+                    }
+                }
+                break;
+
+            case 'password':
+
+                if(event.target.value){
+                  
+                    if(passwordRegex.test(event.target.value)){
+
+                        setError({...error, 'password':''})
+
+                    }
+                    else{
+
+                        setError({...error, 'password':<FormError errorText='Le mot de passe doit contenir au moins une lettre majuscule,
+                        une lettre minuscule,
+                        un chiffre
+                        et minimum 8 caractères'/>})
+                    }
+                }
+
+            break;
+
+            case 'passwordConfirm':
+
+                if(event.target.value){
+
+                    if(formData.password !== formData.passwordConfirm){
+                        setError({...error, 'passwordConfirm': <FormError errorText="Les mot de passes doivent etre identiques"/>})
+                    }
+                    else{
+
+                        setError({...error, 'passwordConfirm': <FormError errorText=''/>})
+                    }
+
+                }
+
+            break;
+
+            case 'username':
+                
+                if(event.target.value){
+                    userRegex.test(event.target.value) ? setError({...error, 'username': ''}) : setError({...error, 'username': <FormError errorText="Le nom d'utilisateur doit contenir au moins une lettre majuscule,
+                    une lettre minuscule 
+                    et entre 8 et 20 caractères"/>})
+                }
+                
+
+            break;
+
         }
-
-      break;
-
-      case 'emailConfirm':
-
-        if(event.target.value){
-
-          if(emailRegex.test(event.target.value))
-          {
-            if(formData.email !== formData.emailConfirm) { setError({...error, 'emailConfirm': <FormError errorText="Cette adresse email n'est pas identique a l'autre"/>}) }
-          else { setError({...error, 'emailConfirm': ''})}
-          }  
-          else {
-            setError({...error, 'emailConfirm': <FormError errorText='Cette adresse email est incorrecte'/>}) 
-          }
-        }
-      break;
-
     }
 
-  }
+    function HandleSubmit(){
 
-  function HandleSubmit(){
+        Object.keys(formData).forEach(key => {
 
-    Object.keys(formData).forEach(key => {
-      const value = formData[key];
+            if(!formData[key]){
 
-      if(!value){
-
-        //setError({...error, [key] : <FormError errorText='* Ce champ est requis'/>})
-        newError[key] = <FormError errorText='* Ce champ est requis'/>
-      }
- 
-      setError(newError)
-
-
-      
-    });
-
-    
-
-    
-  }
+                error[key] = <FormError errorText='* Ce champ est requis'/>
+                setError({...error, error})
+            }
+        });
+    }
 
 
   return (
@@ -95,11 +140,11 @@ export default function RegisterForm() {
     <Box sx={{ display: 'flex', flexDirection: 'column'}}>
 
             
-            <UsernameForm label='Username' name='username' value={formData.username} onChange={handleChange}/>            
+            <UsernameForm label='Username' name='username' value={formData.username} onChange={handleChange} handleBlur={OnBlur}/>            
             {error.username}
-            <PasswordForm label='Password' name='password' value={formData.password} onChange={handleChange}/>
+            <PasswordForm  name='password' label='Password'value={formData.password} onChange={handleChange} handleBlur={OnBlur}/>
             {error.password}
-            <PasswordForm label='Password Confirmation' name='passwordConfirm' value={formData.passwordConfirm} onChange={handleChange}/>
+            <PasswordForm label='Password Confirmation' name='passwordConfirm' value={formData.passwordConfirm} onChange={handleChange} handleBlur={OnBlur}/>
             {error.passwordConfirm}
             <EmailForms name='email' value={formData.email} onChange={handleChange} onBlur={OnBlur}/>
             {error.email} 

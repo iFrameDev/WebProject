@@ -19,27 +19,35 @@ import { Box } from '@mui/system';
 
 function App() {
 
-  return (
+    return (
 
-    
-    
-    <Box sx={{height: '100%' ,bgcolor:'rgb(0 0 0 / 20%)', backdropFilter: 'blur(10px)'}} >
+        <Box sx={{height: '100%' ,bgcolor:'rgb(0 0 0 / 50%)', backdropFilter: 'blur(10px)'}} >
 
-      <Box sx={{margin:'auto', zIndex: 10,bgcolor:'transparent'}}>
-        <ResponsiveAppBar />
+            <Box sx={{display:'flex', flexDirection:'column'}}>
 
-        <Routes>
-            <Route path={'/news'} element={<News />} />
-            <Route path={'/login'} element={<Login />} />
-            <Route path={'/register'} element={<Register />} />
-            <Route path="*" element={<NotFound404 />} />
-            <Route path='/Boutique' element={<NewPages title={'Motel and locations'.toUpperCase()}/>} />
-            
-        </Routes>
-        </Box>
+                <Box > 
 
+                    <ResponsiveAppBar />
+
+                </Box>
+
+                <Box  sx={{display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch'}}>
+
+                    <Routes>
+
+                        <Route path={'/news'} element={<News />} />
+                        <Route path={'/login'} element={<Login />} />
+                        <Route path={'/register'} element={<Register />} />
+                        <Route path="*" element={<NotFound404 />} />
+                        <Route path='/Boutique' element={<NewPages title={'Motel and locations'.toUpperCase()}/>} />
+                    
+                    </Routes>
+
+                </Box>
+
+            </Box>
        </Box>
-  );
+    );
 }
 
 export default App;
