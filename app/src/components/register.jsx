@@ -8,6 +8,7 @@ import UsernameForm from "../components/Form/username";
 import PasswordForm from './Form/password';
 import EmailForms from './Form/email';
 import FormError from './Form/formError';
+import axios from 'axios';
 
 
 export default function RegisterForm() {
@@ -29,6 +30,8 @@ export default function RegisterForm() {
     const handleChange = (event) => {
 
         setFormData({...formData, [event.target.name] : event.target.value});
+
+        
 
 
     };
@@ -122,7 +125,7 @@ export default function RegisterForm() {
         }
     }
 
-    function HandleSubmit(){
+    const HandleSubmit = async() =>{
 
         Object.keys(formData).forEach(key => {
 
@@ -132,6 +135,19 @@ export default function RegisterForm() {
                 setError({...error, error})
             }
         });
+        try{
+            await axios.post('http://localhost:8080/auth/register', {
+
+                username: formData.username,
+                password: formData.password,
+                email: formData.email
+            })
+
+        }
+        catch(error){
+            console.log(error);
+        }
+        
     }
 
 

@@ -21,7 +21,7 @@ function App() {
 
     return (
 
-        <Box sx={{height: '100%' ,bgcolor:'rgb(0 0 0 / 50%)', backdropFilter: 'blur(10px)'}} >
+        <Box sx={{height: '100%' ,bgcolor:'rgb(0 0 0 / 40%)', backdropFilter: 'blur(10px)'}} >
 
             <Box sx={{display:'flex', flexDirection:'column'}}>
 
@@ -31,7 +31,7 @@ function App() {
 
                 </Box>
 
-                <Box  sx={{display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch'}}>
+                <Box  >
 
                     <Routes>
 

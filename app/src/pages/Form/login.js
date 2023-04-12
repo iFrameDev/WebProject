@@ -5,9 +5,6 @@ import Login from '../../components/login'
 import Typography from '@mui/material/Typography';
 
 
-function sayHello() {
-    alert('Hello!');
-  }
 const LoginPage = () => (
 
     <Box >
@@ -25,18 +22,6 @@ const LoginPage = () => (
             </Box>
 
             <Login />
-
-
-            <Box sx={{ display:'flex', flexDirection: 'row'}}>
-
-            <Button onClick={sayHello} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  2 , borderColor: 'white'}}>
-
-                  CONNEXION
-
-            </Button>
-
-
-            </Box>
 
         </Box>
         

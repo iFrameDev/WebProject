@@ -8,7 +8,8 @@ html, body{
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('../public/images/HighresScreenshot00034.png');
+
+  background-color: rgb(85 82 115);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;

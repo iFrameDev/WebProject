@@ -7,10 +7,10 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import HouseIcon from '@mui/icons-material/House';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
+import logo from '../assets/images/logo_transparent.png'
 
 
 const pages = ['News', 'Boutique', 'PLAY SOCIAL LIFE'];
@@ -35,12 +35,19 @@ function ResponsiveAppBar() {
 
     return (
 
-        <AppBar  position="static" sx={{mb:10, p:2, bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
+        <AppBar  position="static" sx={{mb:10, bgcolor:'white'}} style={{boxShadow: 'none'}} >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
 
                     <Box sx={{display:'flex', flexDirection:'row',justifyContent: 'center', alignItems: 'center'}}>
-                        <HouseIcon sx={{ display: { xs: 'none', md: 'flex' },fontSize: '50px', color:'white'}}/>
+                    <Box
+            component="img"
+            sx={{
+            height: 150,
+            }}
+            alt="Your logo."
+            src={logo}
+        />
                         <Typography
                             variant="h6"
                             noWrap
@@ -51,14 +58,13 @@ function ResponsiveAppBar() {
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
                             fontFamily: 'monospace',
-                            color: 'white',
+                            color: 'rgb(85 82 115)',
                             textDecoration: 'none',
                             fontSize: 50,
-                            p:1,
 
                             }}
                         >
-                            SOCIAL LIFE
+                            LIFE
 
                         </Typography>
                     </Box>
@@ -104,26 +110,28 @@ function ResponsiveAppBar() {
                                     </MenuItem>
                                 ))}
                         </Menu>
-                    </Box>
+              
 
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href=""
-                        sx={{
-                        mr: 2,
-                        display: { xs: 'flex', md: 'none', justifyContent: 'center' },
-                        flexGrow: 1,
-                        fontFamily: 'monospace',
-                        color: 'white',
-                        textDecoration: 'none',
-                        fontSize: 50,
-                        p:1
-                        }}
-                    >
-                        SOCIAL LIFE
-                    </Typography>
+                        <Typography
+                            variant="h5"
+                            noWrap
+                            component="a"
+                            href=""
+                            sx={{
+                            mr: 2,
+                            display: { xs: 'flex', md: 'none', justifyContent: 'center' },
+                            flexGrow: 1,
+                            fontFamily: 'monospace',
+                            color: 'white',
+                            textDecoration: 'none',
+                            fontSize: {xs:32, md:50},
+                            p:1
+                            }}
+                        >
+                            SOCIAL LIFE
+                        </Typography>
+                        
+                    </Box>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
 
@@ -143,7 +151,7 @@ function ResponsiveAppBar() {
 
                         <Link to={`/login`} >
                             <Button
-                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'white', display: 'block'}}
+                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'rgb(85 82 115)', display: 'block'}}
                             >
                                 Login
                             </Button>
@@ -151,7 +159,7 @@ function ResponsiveAppBar() {
 
                         <Link to={`/register`} >
                             <Button
-                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'white', display: 'block'}}
+                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'rgb(85 82 115)', display: 'block'}}
                             >
                                 Sign up
                             </Button>

@@ -5,11 +5,12 @@ import RegisterForm from "../../components/register";
 import Typography from '@mui/material/Typography';
 
 
+
 const Register = () => (
 
 
 
-    <Box sx={{display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', margin:'auto', minWidth:'400px'}}>
+    <Box sx={{p:1, display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', margin:'auto', minWidth:'xs', maxWidth:'sm'}}>
 
 
         
