@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "@mui/material";
 import Grid from '@mui/material/Grid';
 import ActionAreaCard from '../components/DevblogCard';

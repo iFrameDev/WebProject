@@ -1,5 +1,4 @@
 import CssTextfield from "./textFieldCustom";
-import React from "react";
 import { useState } from "react"
 
 
@@ -7,21 +6,7 @@ import { useState } from "react"
 
 export default function UsernameForm(props) {
 
-
-
-    const regEx = /^.{8,20}$/;
-
-
     const [usernameError, setUsernameError] = useState(false);
-
-    const HandleBlur = (event) => {
-
-        if(props.useRegex)
-        {
-            return regEx.test(event.target.value) ? setUsernameError(false) : setUsernameError(true);
-        }
-        
-    }
 
     return (
 

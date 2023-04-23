@@ -1,7 +1,8 @@
 import React from "react";
 import { Box } from "@mui/material";
 import Login from '../../components/login'
-import Typography from '@mui/material/Typography';
+import { Typography } from '@mui/material';
+
 
 
 const LoginPage = () => (

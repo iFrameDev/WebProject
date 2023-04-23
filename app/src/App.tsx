@@ -1,4 +1,4 @@
-
+import * as React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ResponsiveAppBar from './components/appbar';
 import News from './pages/News'
@@ -10,17 +10,23 @@ import { Box } from '@mui/system';
 import ApiProvider from './contexts/ApiProvider';
 
 
+import {
+    QueryClient,
+    QueryClientProvider,
+  } from '@tanstack/react-query'
 
 
 
-function App() {
+const queryClient = new QueryClient()
+
+export default function App() {
 
     return (
 
         <Box sx={{height: '100%' ,bgcolor:'rgb(0 0 0 / 40%)', backdropFilter: 'blur(10px)'}} >
 
             <Box sx={{display:'flex', flexDirection:'column'}}>
-                <ApiProvider>
+            <QueryClientProvider client={queryClient}>
                     <Box > 
 
                         <ResponsiveAppBar />
@@ -40,10 +46,10 @@ function App() {
                         </Routes>
 
                     </Box>
-                </ApiProvider>
+                    </QueryClientProvider>
             </Box>
        </Box>
     );
 }
 
-export default App;
+

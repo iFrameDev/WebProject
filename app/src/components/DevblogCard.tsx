@@ -5,10 +5,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
+type ActionAreaCardProps = {
+  name: string;
+}
 
-export default function ActionAreaCard(props) {
 
-
+export default function ActionAreaCard(props:ActionAreaCardProps) {
 
   return (
     <Card sx={{ height:'350px', bgcolor: "rgb(255, 255, 255)"}}>

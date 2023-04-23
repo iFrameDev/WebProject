@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo_transparent.png'
+
 
 
 const pages = ['News', 'Boutique', 'PLAY SOCIAL LIFE'];
@@ -19,9 +19,9 @@ const isVisibled = false;
 
 function ResponsiveAppBar() {
 
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
-    const handleOpenNavMenu = (event) => {
+    const handleOpenNavMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
 
         setAnchorElNav(event.currentTarget);
 
@@ -46,7 +46,7 @@ function ResponsiveAppBar() {
             height: 150,
             }}
             alt="Your logo."
-            src={logo}
+            src={require('../assets/images/logo_transparent.png')}
         />
                         <Typography
                             variant="h6"
