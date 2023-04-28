@@ -6,7 +6,7 @@ import {useState} from 'react'
 import { Button } from '@mui/material';
 import Cookies from 'js-cookie'
 import jwt_decode from "jwt-decode";
-import { UserLogin } from '../services/Authentification/auth';
+import { UserLogin } from '../services/Authentification/auth.service';
 import { useQueryClient, useMutation } from '@tanstack/react-query';
 import CircularIndeterminate from './loader/loader';
 
@@ -71,9 +71,9 @@ export default function LoginForm() {
                 <UsernameForm label='Username' name='username' value={formData.username} onChange={handleChange} />            
                 <PasswordForm  name='password' label='Password'value={formData.password} onChange={handleChange}/>
                 {error}
-                <Button type="submit" sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  2 , borderColor: 'white'}}>
+                <Button  type="submit" sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  2 , borderColor: 'white'}}>
 
-                    {loginMutation.isLoading ? <CircularIndeterminate/> : "CONNEXION"}
+                    {"CONNEXION"}
 
                 </Button>
             
