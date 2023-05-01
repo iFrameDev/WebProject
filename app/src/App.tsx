@@ -7,7 +7,7 @@ import NewPages from './pages/NewPages';
 import Login from './pages/Form/login';
 import Register from './pages/Form/register'
 import { Box } from '@mui/system';
-import ApiProvider from './contexts/ApiProvider';
+import { AuthProvider } from './contexts/AuthProvider';
 
 
 import {
@@ -24,29 +24,30 @@ export default function App() {
     return (
 
         <Box sx={{height: '100%' ,bgcolor:'rgb(0 0 0 / 40%)', backdropFilter: 'blur(10px)'}} >
-
             <Box sx={{display:'flex', flexDirection:'column'}}>
-            <QueryClientProvider client={queryClient}>
-                    <Box > 
+                <QueryClientProvider client={queryClient}>
+                    <AuthProvider>
+                        <Box > 
 
-                        <ResponsiveAppBar />
+                            <ResponsiveAppBar />
 
-                    </Box>
+                        </Box>
 
-                    <Box  >
+                        <Box  >
 
-                        <Routes>
+                            <Routes>
 
-                            <Route path={'/news'} element={<News />} />
-                            <Route path={'/login'} element={<Login />} />
-                            <Route path={'/register'} element={<Register />} />
-                            <Route path="*" element={<NotFound404 />} />
-                            <Route path='/Boutique' element={<NewPages title={'Motel and locations'.toUpperCase()}/>} />
-                        
-                        </Routes>
+                                <Route path={'/news'} element={<News />} />
+                                <Route path={'/login'} element={<Login />} />
+                                <Route path={'/register'} element={<Register />} />
+                                <Route path="*" element={<NotFound404 />} />
+                                <Route path='/Boutique' element={<NewPages title={'Motel and locations'.toUpperCase()}/>} />
+                            
+                            </Routes>
 
-                    </Box>
-                    </QueryClientProvider>
+                        </Box>
+                    </AuthProvider>
+                </QueryClientProvider>
             </Box>
        </Box>
     );

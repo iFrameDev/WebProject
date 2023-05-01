@@ -37,18 +37,6 @@ export default function LoginForm() {
         setFormData({...formData, [event.target.name] : event.target.value});
     };
 
-    const loginMutation  = useMutation({
-        mutationFn: () => UserLogin(formData.username, formData.password),
-          onSuccess: (res) => {
-            var decoded:DecodedToken = jwt_decode(res.data.access_token);
-            var expirationDate = new Date(decoded.exp * 1000);
-            Cookies.set('access_token', res.data.access_token, {expires:expirationDate});
-
-          },
-          onError: (error: any) => {
-            setError("Error: " + error.message);
-          }
-    })
 
     const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
