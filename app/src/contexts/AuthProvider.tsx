@@ -1,43 +1,40 @@
 import React, { createContext, useState, useContext } from 'react';
 import { useQueryClient, useMutation } from '@tanstack/react-query';
-import { UserLogin, DecodeJWT, SetToken } from '../services/Authentification/auth.service';
+import { UserLogin, DecodeJWT, SetToken, Login, Token } from '../services/Authentification/auth.service';
 
 
-type AuthContextProps = {
+
+  type AuthContextProps = {
     isAuthenticated: boolean;
-    login: (username: string, password: string) => Promise<void>;
+    login: (username: string, password: string) => Promise<Token>;
     logout: () => Promise<void>;
-  }
+  };
   
   const AuthContext = createContext<AuthContextProps>({
     isAuthenticated: false,
-    login: async (username: string, password: string) => {},
+   login: async (username: string, password: string) => {
+    const token = await UserLogin(username, password);
+    return token;
+  },
     logout: async () => {},
   });
+
+const useAuth = () => useContext(AuthContext);
   
-  const useAuth = () => useContext(AuthContext);
-  
-  const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+
     const queryClient = useQueryClient();
 
-    const loginMutation = async (username:string, password:string) => useMutation({
 
-      // appel de l'API pour se connecter
-      // mise à jour du token dans le local storage
-      // mise à jour de l'état d'authentification
 
-      mutationFn: () => UserLogin(username, password),
-        onSuccess: (res) => {
-          var decoded = DecodeJWT(res.data.access_token);
-          SetToken(res.data.access_token, new Date(decoded.exp * 1000));
 
-        },
-        onError: (error: any) => {
+    const handleLogin = async (username: string, password: string) => {
+        // appel de l'API pour se connecter
+        // stockage du token dans le local storage
+        // mise à jour de l'état d'authentification
+        return UserLogin(username, password);
+      };
 
-        }
-  })
-
-  
     const handleLogout = async () => {
       // appel de l'API pour se déconnecter
       // suppression du token du local storage
@@ -46,10 +43,10 @@ type AuthContextProps = {
     };
   
     return (
-      <AuthContext.Provider value={{ isAuthenticated: true, login: loginMutation, logout: handleLogout }}>
+      <AuthContext.Provider value={{ isAuthenticated: true, login:handleLogin, logout: handleLogout }}>
         {children}
       </AuthContext.Provider>
     );
-  };
+};
   
-  export { AuthProvider, useAuth };
+export { AuthProvider, useAuth };

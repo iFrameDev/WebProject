@@ -7,10 +7,15 @@ type DecodedToken = {
     exp: number;
 }
 
+export type LoginResponse = {
+    access_token:string;
+    exp:Date
+}
 
-export const UserLogin = async (username:string, password:string) => {
 
-    const res = await axios.post(`${process.env.REACT_APP_BASE_API_URL}/auth/login`,{username, password})
+export const UserLogin = async (username:string, password:string):Promise<string> => {
+    
+    const res:string = await axios.post(`${process.env.REACT_APP_BASE_API_URL}/auth/login`,{username, password})
     return res;
 }
 

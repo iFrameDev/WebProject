@@ -6,9 +6,10 @@ import {useState} from 'react'
 import { Button } from '@mui/material';
 import Cookies from 'js-cookie'
 import jwt_decode from "jwt-decode";
-import { UserLogin } from '../services/Authentification/auth.service';
+import { LoginResponse, UserLogin } from '../services/Authentification/auth.service';
 import { useQueryClient, useMutation } from '@tanstack/react-query';
 import CircularIndeterminate from './loader/loader';
+import { useAuth } from '../contexts/AuthProvider';
 
 
 
@@ -17,13 +18,8 @@ import CircularIndeterminate from './loader/loader';
 
 export default function LoginForm() {
 
-    const queryClient = useQueryClient();
 
-    type DecodedToken = {
-        sub: string;
-        exp: number;
-    }
-
+    const { isAuthenticated, login, logout } = useAuth();
 
     const [error, setError] = useState('')
 
@@ -38,12 +34,29 @@ export default function LoginForm() {
     };
 
 
-    const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setError('');
         if (formData.username && formData.password) {
-            loginMutation.mutate()
-            queryClient.invalidateQueries(['login']);
+            console.log('envoi')
+            const res = await UserLogin(formData.username,formData.password)
+            console.log('res')
+            
+
+        } else {
+            setError('Please fill in both fields.');
+        }
+    };
+
+    
+    const handleLoginn = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setError('');
+        if (formData.username && formData.password) {
+            console.log('envoi')
+            const res = await UserLogin(formData.username,formData.password)
+            console.log('res')            
+
         } else {
             setError('Please fill in both fields.');
         }
