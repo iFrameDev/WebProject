@@ -4,11 +4,12 @@ import UsernameForm from "./Form/username";
 import PasswordForm from './Form/password';
 import {useState} from 'react'
 import { Button } from '@mui/material';
-import { UserLogin } from '../services/Authentification/auth.service';
+import { LoginResponse, UserLogin } from '../services/Authentification/auth.service';
 import { useMutation } from '@tanstack/react-query';
 import CircularIndeterminate from './loader/loader';
 import { useAuth } from '../contexts/AuthProvider';
-
+import Cookies from 'js-cookie';
+import { AxiosResponse } from 'axios';
 
 
 
@@ -37,13 +38,11 @@ export default function LoginForm() {
 
     const loginMutation = useMutation((credentials: loginForm) => UserLogin(credentials.username, credentials.password),
         {
-            onSuccess: (data) => {
-                console.log(data);
-            //const accessToken = data.access_token;
-            // Stockez le jeton d'accès dans votre application (par exemple, dans le state)
-            //setAccessToken(accessToken);
-            // Effectuez d'autres actions après le succès de la mutation
-            // ...
+            onSuccess: (response:AxiosResponse<LoginResponse>) => {
+
+            const accessToken = response.data.access_token;
+            const expirationTimeInMinutes = 60;
+            Cookies.set('access_token', accessToken, { expires: expirationTimeInMinutes / (24 * 60) });
         },
     });
 
@@ -61,11 +60,16 @@ export default function LoginForm() {
         setError('');
         if (formData.username && formData.password) {
 
-            loginMutation.mutateAsync(formData);
-            
-        } else {
-            setError('Please fill in both fields.');
-        }
+            try {
+                await loginMutation.mutateAsync(formData);
+                // Traitement après la mutation réussie
+              } catch (error) {
+                // Gérer l'erreur en cas d'échec de la mutation
+                setError('Error during login. Please try again.');
+              }
+            } else {
+              setError('Please fill in both fields.');
+            }
     };
     
 

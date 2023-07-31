@@ -136,13 +136,15 @@ export default function RegisterForm() {
             }
         });
         try{
-            await axios.post('http://localhost:8080/auth/register', {
+
+            await axios.post('http://localhost:8000/user/', {
 
                 username: formData.username,
                 password: formData.password,
-                email: formData.email
+                email: formData.email                
             })
 
+            console.log(formData)
         }
         catch(error){
             console.log(error);

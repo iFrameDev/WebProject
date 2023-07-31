@@ -1,12 +1,13 @@
-import React, { createContext, useState, useContext } from 'react';
-import { useQueryClient, useMutation } from '@tanstack/react-query';
-import { UserLogin, Token } from '../services/Authentification/auth.service';
+import React, { createContext,useContext } from 'react';
+import { useQueryClient} from '@tanstack/react-query';
+import { UserLogin,  LoginResponse} from '../services/Authentification/auth.service';
+import { AxiosResponse } from 'axios';
 
 
 
   type AuthContextProps = {
     isAuthenticated: boolean;
-    login: (username: string, password: string) => Promise<Token>;
+    login: (username: string, password: string) => Promise<AxiosResponse>;
     logout: () => Promise<void>;
   };
   

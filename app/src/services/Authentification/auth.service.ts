@@ -1,6 +1,7 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import Cookies from "js-cookie";
+import { AxiosResponse } from 'axios';
 
 type DecodedToken = {
     sub: string;
@@ -9,13 +10,15 @@ type DecodedToken = {
 
 export type LoginResponse = {
     access_token:string;
-    exp:Date
+    exp:Date;
+    status:number;
+    data:string;
 }
 
 
-export const UserLogin = async (username:string, password:string):Promise<string> => {
+export const UserLogin = async (username:string, password:string):Promise<AxiosResponse> => {
     
-    const res:string = await axios.post(`${process.env.REACT_APP_BASE_API_URL}/auth/login`,{username, password})
+    const res:AxiosResponse = await axios.post(`${process.env.REACT_APP_BASE_API_URL}/login/`,{username, password})
     return res;
 }
 
