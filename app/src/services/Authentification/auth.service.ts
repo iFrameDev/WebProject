@@ -13,6 +13,7 @@ export type LoginResponse = {
     exp:Date;
     status:number;
     data:string;
+    username:string
 }
 
 

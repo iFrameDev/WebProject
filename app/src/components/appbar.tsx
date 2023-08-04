@@ -10,6 +10,8 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthProvider';
+import UserProfil from '../components/user_profil'
 
 
 
@@ -17,9 +19,13 @@ const pages = ['News', 'Boutique', 'PLAY SOCIAL LIFE'];
 const path = ['News', 'Boutique', 'login'];
 const isVisibled = false;
 
+
+
 function ResponsiveAppBar() {
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+    const {isAuthenticated, logout} = useAuth();
+
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
 
@@ -33,40 +39,24 @@ function ResponsiveAppBar() {
 
     };
 
-    return (
 
+    return (
+        
         <AppBar  position="static" sx={{mb:10, bgcolor:'white'}} style={{boxShadow: 'none'}} >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-
+                    <UserProfil/>
                     <Box sx={{display:'flex', flexDirection:'row',justifyContent: 'center', alignItems: 'center'}}>
-                    <Box
-            component="img"
-            sx={{
-            height: 150,
-            }}
-            alt="Your logo."
-            src={require('../assets/images/logo_transparent.png')}
-        />
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="/"
+                        
+                        <Box
+                            component="img"
                             sx={{
-                            
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            color: 'rgb(85 82 115)',
-                            textDecoration: 'none',
-                            fontSize: 50,
-
+                            height: 100,
                             }}
-                        >
-                            LIFE
+                            alt="Your logo."
+                            src={require('../assets/images/logopl.png')}
+                        />
 
-                        </Typography>
                     </Box>
                     
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -147,9 +137,21 @@ function ResponsiveAppBar() {
 
                                 </Button>
                             </Link>
+                            
                         )) : ''}
+                        {isAuthenticated ? (
 
-                        <Link to={`/login`} >
+                            
+                            
+                            <Button
+                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'rgb(85 82 115)', display: 'block'}}
+                                onClick={logout}
+                            >
+                                Logout
+                            </Button>) :
+                       ( 
+                       <>
+                       <Link to={`/login`} >
                             <Button
                                 sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'rgb(85 82 115)', display: 'block'}}
                             >
@@ -163,7 +165,7 @@ function ResponsiveAppBar() {
                             >
                                 Sign up
                             </Button>
-                        </Link>
+                        </Link></>)}
                     </Box>
                 </Toolbar>
             </Container>

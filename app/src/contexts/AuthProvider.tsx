@@ -1,53 +1,60 @@
-import React, { createContext,useContext } from 'react';
+import React, { createContext,useContext, useState, useEffect} from 'react';
 import { useQueryClient} from '@tanstack/react-query';
-import { UserLogin,  LoginResponse} from '../services/Authentification/auth.service';
-import { AxiosResponse } from 'axios';
+import Cookies from 'js-cookie';
 
 
+type AuthContextProps = {
 
-  type AuthContextProps = {
     isAuthenticated: boolean;
-    login: (username: string, password: string) => Promise<AxiosResponse>;
     logout: () => Promise<void>;
-  };
+    setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
+
+};
   
-  const AuthContext = createContext<AuthContextProps>({
+const AuthContext = createContext<AuthContextProps>({
+
     isAuthenticated: false,
-   login: async (username: string, password: string) => {
-    const token = await UserLogin(username, password);
-    return token;
-  },
     logout: async () => {},
+    setIsAuthenticated: () => {}
   });
 
 const useAuth = () => useContext(AuthContext);
   
 const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
+    const [isAuthenticated, setIsAuthenticated] = useState(
+        Cookies.get('access_token') !== undefined
+      );
+
     const queryClient = useQueryClient();
 
 
-
-
-    const handleLogin = async (username: string, password: string) => {
-        // appel de l'API pour se connecter
-        // stockage du token dans le local storage
-        // mise à jour de l'état d'authentification
-        return UserLogin(username, password);
-      };
-
-    const handleLogout = async () => {
-      // appel de l'API pour se déconnecter
-      // suppression du token du local storage
-      // mise à jour de l'état d'authentification
-      queryClient.resetQueries(); // Réinitialisation des requêtes effectuées avec react-query
+    const handleLogout = async () => {  
+        setIsAuthenticated(false)
+        Cookies.remove('access_token');
+        queryClient.resetQueries(); // Réinitialisation des requêtes effectuées avec react-query
     };
-  
+
+        
+    useEffect(() => {
+        const token = Cookies.get('access_token');
+        
+        if (token) {
+          setIsAuthenticated(true);
+        } 
+        else {
+          Cookies.remove('access_token');
+          setIsAuthenticated(false);
+        }
+
+    }, [isAuthenticated]);
+      
+    
     return (
-      <AuthContext.Provider value={{ isAuthenticated: true, login:handleLogin, logout: handleLogout }}>
+      <AuthContext.Provider value={{ isAuthenticated, logout: handleLogout, setIsAuthenticated}}>
         {children}
       </AuthContext.Provider>
     );
 };
   
-export { AuthProvider, useAuth };
+export { AuthProvider, useAuth};

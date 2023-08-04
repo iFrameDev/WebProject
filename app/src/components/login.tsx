@@ -14,7 +14,6 @@ import { AxiosResponse } from 'axios';
 
 
 
-
 export default function LoginForm() {
 
     type loginForm = {
@@ -22,12 +21,7 @@ export default function LoginForm() {
         password:string
     }
 
-    const initialFormData: loginForm = {
-        username: '',
-        password: '',
-      };
-
-    const { isAuthenticated, login, logout } = useAuth();
+    const { setIsAuthenticated} = useAuth();
 
     const [error, setError] = useState('')
 
@@ -40,9 +34,13 @@ export default function LoginForm() {
         {
             onSuccess: (response:AxiosResponse<LoginResponse>) => {
 
-            const accessToken = response.data.access_token;
-            const expirationTimeInMinutes = 60;
-            Cookies.set('access_token', accessToken, { expires: expirationTimeInMinutes / (24 * 60) });
+                const accessToken = response.data.access_token;
+                const username = response.data.username;
+                const expirationTimeInMinutes = 60;
+                Cookies.set('access_token', accessToken, { expires: expirationTimeInMinutes / (24 * 60) });
+                Cookies.set('username', username);
+                setIsAuthenticated(true);
+
         },
     });
 
@@ -82,7 +80,7 @@ export default function LoginForm() {
                 <UsernameForm label='Username' name='username' value={formData.username} onChange={handleChange} />            
                 <PasswordForm  name='password' label='Password'value={formData.password} onChange={handleChange}/>
                 {error}
-                <Button  type="submit" sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  2 , borderColor: 'white'}}>
+                <Button  type="submit" sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  2 , borderColor: 'rgb(35 86 128)', bgcolor: 'rgb(35 86 128)'}}>
 
                     {loginMutation.isLoading ? <CircularIndeterminate/> : "CONNEXION"}
 
