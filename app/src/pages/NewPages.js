@@ -30,7 +30,7 @@ const NewPages = (props) => (
 
         
 
-    <Box mb={10} sx={{ p:2, border: 1, borderColor: 'rgb(56,56,56)'} }  >
+    <Box mb={10} sx={{ p:2, border: 2, borderColor: 'white'} }  >
 
       <Typography variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '15px'}} >
 

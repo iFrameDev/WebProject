@@ -12,12 +12,13 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthProvider';
 import UserProfil from '../components/user_profil';
+import Avatar from '@mui/material/Avatar';
 
 
 
 const pages = ['News', 'Boutique', 'PLAY SOCIAL LIFE'];
 const path = ['News', 'Boutique', 'login'];
-const isVisibled = false;
+const isVisibled = true;
 
 
 
@@ -42,21 +43,21 @@ function ResponsiveAppBar() {
 
     return (
         
-        <AppBar  position="static" sx={{mb:10, bgcolor:'white'}} style={{boxShadow: 'none'}} >
+        <AppBar  position="static" sx={{m:2, bgcolor:'transparent', borderBottom: 0}} style={{boxShadow: 'none'}} >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <UserProfil/>
-                    <Box sx={{display:'flex', flexDirection:'row',justifyContent: 'center', alignItems: 'center'}}>
+                    <Box sx={{m:1, display:{md:'flex', xs: 'none'}, flexDirection:'column',justifyContent: 'center', alignItems: 'center'}}>
 
-                        <Box
-                            component="img"
-                            sx={{
-                            height: 100,
-                            }}
-                            alt="Your logo."
-                            src={require('../assets/images/logopl.png')}
-                        />
+                        <Typography sx={{}}  display="block" component="div" style={{ color:'white' ,fontSize: '34px'}} >
 
+                            SOCIAL HOME
+
+                        </Typography> 
+                        <Typography sx={{justifyContent: 'right'}}  display="block" component="div" style={{ color:'rgb(255,69,0)' ,fontSize: '18px'}} >
+
+                            THE NEW IDENTITY
+
+                        </Typography> 
                     </Box>
                     
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -118,7 +119,7 @@ function ResponsiveAppBar() {
                             p:1
                             }}
                         >
-                            SOCIAL LIFE
+                            SOCIAL HOME
                         </Typography>
                         
                     </Box>
@@ -131,7 +132,7 @@ function ResponsiveAppBar() {
 
                                     key={page}
                                     onClick={handleCloseNavMenu}
-                                    sx={{ letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', display: 'block',  border: page === 'PLAY SOCIAL LIFE' ? 2 : 'none', borderColor: page === 'PLAY SOCIAL LIFE' ? 'white': 'none' }}
+                                    sx={{ letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', display: 'block',  border: page === 'PLAY SOCIAL LIFE' ? 2 : 'none', borderColor: page === 'PLAY SOCIAL LIFE' ? 'rgb(255,69,0)': 'none' }}
                                     >
                                     {page}
 
@@ -144,23 +145,28 @@ function ResponsiveAppBar() {
                             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', color:'rgb(35 86 128)',fontWeight: 'bold' }, justifyContent: 'flex-end' }}>
                           <Box sx={{ display: 'flex', alignItems: 'center' }}>
                         
-                            <UserProfil />
-
-                            
                             
                             <Button
-                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'rgb(35 86 128)', display: 'block'}}
+                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'white', display: 'block'}}
+                           
+                            >
+                                <UserProfil />
+                            </Button>
+                            
+                            <Button
+                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'white', display: 'block'}}
                                 onClick={logout}
                             >
                                 Logout
                             </Button>
+                            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                             </Box>
                             </Box> ) :
                        ( 
                        <>
                        <Link to={`/login`} >
                             <Button 
-                                sx={{ fontWeight: 'bold', bgcolor:'white', letterSpacing: '.1rem',fontSize: 15, mx:1, my: 2, color: 'rgb(35 86 128)', display: 'block'}}
+                                sx={{letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: 'white', display: 'block'}}
                             >
                                 Login
                             </Button>
@@ -168,7 +174,7 @@ function ResponsiveAppBar() {
 
                         <Link to={`/register`} >
                             <Button 
-                                sx={{ fontWeight: 'bold', bgcolor:'white', letterSpacing: '.1rem',fontSize: 15, mx:1, my: 2, color: 'rgb(35 86 128)', display: 'block'}}
+                                sx={{ letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: 'white', display: 'block'}}
                             >
                                 Sign up
                             </Button>

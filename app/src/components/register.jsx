@@ -157,9 +157,9 @@ export default function RegisterForm() {
 
     <Box sx={{ display: 'flex', flexDirection: 'column'}}>
 
-            <Typography sx={{mb:3, bgcolor: 'rgb(35,86,128)', borderBottom: 2, borderColor: 'white'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '17px'}} >
+            <Typography sx={{mb:3,  p:1}} display="block" component="div" style={{ color:'white' ,fontSize: '17px'}} >
 
-            Create Your Account
+                CREATE YOUR ACCOUNT
 
             </Typography>
 
@@ -174,7 +174,7 @@ export default function RegisterForm() {
             {error.email} 
             <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation' onBlur={OnBlur}/>
             {error.emailConfirm}
-            <Button onClick={() => HandleSubmit()} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',bgcolor: 'rgb(35,86,128)', fontSize: 14, mt: 2, display: 'block',  border:  1 , borderColor: 'white'}}>
+            <Button onClick={() => HandleSubmit()} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white', bgcolor: 'rgba(17, 24, 39, 0.9)', fontSize: 15, mt: 2, display: 'block'}}>
 
               Completed registration
 

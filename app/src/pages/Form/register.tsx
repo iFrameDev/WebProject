@@ -6,7 +6,7 @@ const Register = () => (
 
 
 
-    <Box sx={{p:1, borderColor: 'blue', display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', margin:'auto', minWidth:'xs', maxWidth:'sm', boxShadow: 3}}>
+    <Box sx={{p:1, display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', margin:'auto', minWidth:'xs', maxWidth:'sm'}}>
 
         <RegisterForm />
 

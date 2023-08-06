@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 
 
 
+
 export default function LoginForm() {
 
     type loginForm = {
@@ -73,9 +74,9 @@ export default function LoginForm() {
 
     return (
 
-        <Box  sx={{ bgcolor:'white', boxShadow: 10 }}  >
+        <Box  sx={{}}  >
             
-        <Typography sx={{bgcolor:'rgb(35 86 128)', p:1, m:1}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
+        <Typography sx={{ p:1,borderBottom: 2, borderColor:'rgb(255,69,0)'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
 
         LOGIN
 
@@ -83,12 +84,13 @@ export default function LoginForm() {
 
         <form onSubmit={handleLogin}>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', }}>
-
-                <UsernameForm label='Username' name='username' value={formData.username} onChange={handleChange} />            
-                <PasswordForm  name='password' label='Password'value={formData.password} onChange={handleChange}/>
+            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <Box sx={{ display: 'flex',m:2, flexDirection: 'column'}}>
+                    <UsernameForm label='Username' name='username' value={formData.username} onChange={handleChange} />            
+                    <PasswordForm  name='password' label='Password'value={formData.password} onChange={handleChange}/>
+                </Box>
                 {error}
-                <Button  type="submit" sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  2 , borderColor: 'rgb(35 86 128)', bgcolor: 'rgb(35 86 128)'}}>
+                <Button  type="submit" sx={{ border:2, borderColor:'white',flexGrow: 1 , p:1, color:'white',fontSize: 16, m:1,display: 'block', bgcolor: 'rgb(17 24 39)'}}>
 
                     {loginMutation.isLoading ? <CircularIndeterminate/> : "CONNEXION"}
 

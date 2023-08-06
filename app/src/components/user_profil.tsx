@@ -30,6 +30,6 @@ export default function UserProfil() {
     }, [isAuthenticated]); 
 
     return (
-        <p>De retour {localUsername} !!</p>
+        isAuthenticated ? (<p>{localUsername} </p>) : null
     );
 }

@@ -10,10 +10,11 @@ const TextfieldInput = styled(TextField)({
   },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
-      borderColor: 'grey',
+      borderColor: 'white',
     },
+    
     '&:hover fieldset': {
-      borderColor: 'grey',
+      borderColor: 'white',
     },
     '&.Mui-focused fieldset': {
       borderColor: 'white',
@@ -30,7 +31,7 @@ const TextfieldInput = styled(TextField)({
   color: 'white',
 },
   label: {
-  color: 'rgba(171,171,171,1)',
+  color: 'white',
   },
 
 });
