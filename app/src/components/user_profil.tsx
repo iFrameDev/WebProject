@@ -3,16 +3,15 @@ import Cookies from "js-cookie";
 import { useAuth } from '../contexts/AuthProvider';
 
 
-type UserProfilProps = {
-
-    username:string;
-}
-
 export default function UserProfil() {
+
     const [localUsername, setLocalUsername] = useState('');
     const {isAuthenticated} = useAuth();
+
     useEffect(() => {
+
         if(isAuthenticated){
+
             const storedUsername = Cookies.get('username');
             if (storedUsername) {
                 setLocalUsername(storedUsername);
@@ -31,6 +30,6 @@ export default function UserProfil() {
     }, [isAuthenticated]); 
 
     return (
-        <>{localUsername}</>
+        <p>De retour {localUsername} !!</p>
     );
 }

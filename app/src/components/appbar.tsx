@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthProvider';
-import UserProfil from '../components/user_profil'
+import UserProfil from '../components/user_profil';
 
 
 
@@ -47,7 +47,7 @@ function ResponsiveAppBar() {
                 <Toolbar disableGutters>
                     <UserProfil/>
                     <Box sx={{display:'flex', flexDirection:'row',justifyContent: 'center', alignItems: 'center'}}>
-                        
+
                         <Box
                             component="img"
                             sx={{
@@ -139,29 +139,36 @@ function ResponsiveAppBar() {
                             </Link>
                             
                         )) : ''}
-                        {isAuthenticated ? (
+                        {isAuthenticated ? ( 
+
+                            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', color:'rgb(35 86 128)',fontWeight: 'bold' }, justifyContent: 'flex-end' }}>
+                          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                        
+                            <UserProfil />
 
                             
                             
                             <Button
-                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'rgb(85 82 115)', display: 'block'}}
+                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'rgb(35 86 128)', display: 'block'}}
                                 onClick={logout}
                             >
                                 Logout
-                            </Button>) :
+                            </Button>
+                            </Box>
+                            </Box> ) :
                        ( 
                        <>
                        <Link to={`/login`} >
-                            <Button
-                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'rgb(85 82 115)', display: 'block'}}
+                            <Button 
+                                sx={{ fontWeight: 'bold', bgcolor:'white', letterSpacing: '.1rem',fontSize: 15, mx:1, my: 2, color: 'rgb(35 86 128)', display: 'block'}}
                             >
                                 Login
                             </Button>
                         </Link>
 
                         <Link to={`/register`} >
-                            <Button
-                                sx={{ fontWeight: 'bold', bgcolor:'transparent', letterSpacing: '.1rem',fontSize: 13, mx:1, my: 2, color: 'rgb(85 82 115)', display: 'block'}}
+                            <Button 
+                                sx={{ fontWeight: 'bold', bgcolor:'white', letterSpacing: '.1rem',fontSize: 15, mx:1, my: 2, color: 'rgb(35 86 128)', display: 'block'}}
                             >
                                 Sign up
                             </Button>

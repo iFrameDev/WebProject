@@ -23,7 +23,7 @@ export default function App() {
 
     return (
 
-        <Box sx={{height: '100%' ,bgcolor:'white', backdropFilter: 'blur(10px)'}} >
+        <Box sx={{height: '100%' ,backdropFilter: 'blur(10px)'}} >
 
             <Box sx={{display:'flex', flexDirection:'column'}}>
             <QueryClientProvider client={queryClient}>

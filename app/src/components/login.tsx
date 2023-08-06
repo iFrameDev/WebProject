@@ -10,7 +10,7 @@ import CircularIndeterminate from './loader/loader';
 import { useAuth } from '../contexts/AuthProvider';
 import Cookies from 'js-cookie';
 import { AxiosResponse } from 'axios';
-
+import Typography from '@mui/material/Typography';
 
 
 
@@ -73,9 +73,17 @@ export default function LoginForm() {
 
     return (
 
+        <Box  sx={{ bgcolor:'white', boxShadow: 10 }}  >
+            
+        <Typography sx={{bgcolor:'rgb(35 86 128)', p:1, m:1}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
+
+        LOGIN
+
+        </Typography> 
+
         <form onSubmit={handleLogin}>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column'}}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', }}>
 
                 <UsernameForm label='Username' name='username' value={formData.username} onChange={handleChange} />            
                 <PasswordForm  name='password' label='Password'value={formData.password} onChange={handleChange}/>
@@ -88,5 +96,9 @@ export default function LoginForm() {
             
             </Box>
         </form>
+
+    </Box>
+
+        
     );
 }

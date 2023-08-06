@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-
+import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import { Button } from '@mui/material';
 
@@ -157,6 +157,12 @@ export default function RegisterForm() {
 
     <Box sx={{ display: 'flex', flexDirection: 'column'}}>
 
+            <Typography sx={{mb:3, bgcolor: 'rgb(35,86,128)', borderBottom: 2, borderColor: 'white'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '17px'}} >
+
+            Create Your Account
+
+            </Typography>
+
             
             <UsernameForm label='Username' name='username' value={formData.username} onChange={handleChange} handleBlur={OnBlur}/>            
             {error.username}
@@ -168,7 +174,7 @@ export default function RegisterForm() {
             {error.email} 
             <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation' onBlur={OnBlur}/>
             {error.emailConfirm}
-            <Button onClick={() => HandleSubmit()} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',fontSize: 14, mx:1, my: 2,display: 'block',  border:  1 , borderColor: 'white'}}>
+            <Button onClick={() => HandleSubmit()} sx={{ fontWeight: 'bold', flexGrow: 1 , p:2, color:'white',letterSpacing: '.1rem',bgcolor: 'rgb(35,86,128)', fontSize: 14, mt: 2, display: 'block',  border:  1 , borderColor: 'white'}}>
 
               Completed registration
 
