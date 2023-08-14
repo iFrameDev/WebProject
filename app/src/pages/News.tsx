@@ -5,47 +5,47 @@ import Typography from '@mui/material/Typography';
 
 
 const gridStyles = {
-    mx: 'auto',
-    maxWidth: 'md',
-    paddingRight: 1,
-    paddingBottom: 1
+
+p:1
+
+
 };
   
 
 const About = () => (
 
-          <Box sx={{ margin: 'auto', maxWidth:'900px', display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'stretch', p:10}}>
+    <Box sx={{ margin: 'auto', maxWidth:'1100px', display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'stretch', p:10}}>
 
-          <Box  sx={{ pb:5, } }  >
-            
-            <Typography sx={{fontWeight: 'bold',borderBottom: 1, borderColor: 'rgb(228,227,248)'}} variant="overline" display="block" component="div" style={{ color:'rgb(112,101,240)' ,fontSize: '17px'}} >
+        <Box  sx={{ pb:5} }  >
+        
+            <Typography sx={{p:1 ,borderLeft:2, borderColor:'rgb(255,69,0)'}} display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
 
-            news
+                NEWS 
 
-            </Typography> 
-    
+            </Typography>             
+
         </Box>
 
-<Grid container sx={{...gridStyles, p:1}} spacing={3}>
+        <Grid container sx={{...gridStyles}} spacing={3}>
 
-  <Grid item xl={6}>
-    <ActionAreaCard name='Motel and locations 1'/>
-  </Grid>
-  <Grid item xl={6}>
-    <ActionAreaCard name='Motel and locations 2'/>
-  </Grid>
-  <Grid item xl={6}>
-    <ActionAreaCard name='Motel and locations'/>
-  </Grid>
-  <Grid item xl={6}>
-    <ActionAreaCard name='Motel and locations'/>
-  </Grid>
-  <Grid item xl={6}>
-    <ActionAreaCard name='Motel and locations'/>
-  </Grid>
-  <Grid item xl={6}>
-    <ActionAreaCard name='Motel and locations'/>
-  </Grid>
+            <Grid item xl={4}>
+                <ActionAreaCard name='DEVBLOG 1'/>
+            </Grid>
+            <Grid item xl={4}>
+                <ActionAreaCard name='DEVBLOG 2'/>
+            </Grid>
+            <Grid item xl={4}>
+                <ActionAreaCard name='DEVBLOG 3'/>
+            </Grid>
+            <Grid item xl={4}>
+                <ActionAreaCard name='DEVBLOG 4'/>
+            </Grid>
+            <Grid item xl={4}>
+                <ActionAreaCard name='DEVBLOG 5'/>
+            </Grid>
+            <Grid item xl={4}>
+                <ActionAreaCard name='DEVBLOG 6'/>
+        </Grid>
 
   
 

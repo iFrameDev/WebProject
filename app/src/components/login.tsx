@@ -74,9 +74,9 @@ export default function LoginForm() {
 
     return (
 
-        <Box  sx={{}}  >
+        <Box  sx={{display: 'flex',m:1,flexDirection: 'column', mt:10,}}  >
             
-        <Typography sx={{ p:1,borderBottom: 2, borderColor:'rgb(255,69,0)'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
+        <Typography sx={{ letterSpacing: '.2rem',p:1,borderLeft: 2, borderColor:'rgb(255,69,0)'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
 
         LOGIN
 
@@ -84,13 +84,13 @@ export default function LoginForm() {
 
         <form onSubmit={handleLogin}>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                <Box sx={{ display: 'flex',m:2, flexDirection: 'column'}}>
+            <Box sx={{ display: 'flex', flexDirection: 'column'}}>
+                <Box sx={{ display: 'flex',mt:4,mb:4, flexDirection: 'column'}}>
                     <UsernameForm label='Username' name='username' value={formData.username} onChange={handleChange} />            
                     <PasswordForm  name='password' label='Password'value={formData.password} onChange={handleChange}/>
                 </Box>
                 {error}
-                <Button  type="submit" sx={{ border:2, borderColor:'white',flexGrow: 1 , p:1, color:'white',fontSize: 16, m:1,display: 'block', bgcolor: 'rgb(17 24 39)'}}>
+                <Button  type="submit" sx={{ flexGrow: 1 , p:1, color:'white',fontSize: 16, m:1,display: 'block', bgcolor: 'rgba(17,24,39,0.2)',boxShadow: 3}}>
 
                     {loginMutation.isLoading ? <CircularIndeterminate/> : "CONNEXION"}
 

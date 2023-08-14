@@ -15,11 +15,11 @@ const NewPages = (props) => (
 
 
 
-<Box  sx={{  p:10, margin:'auto', maxWidth:'800px', display: 'flex', flexDirection: 'column', alignItems:'stretch', justifyContent: 'space-between'} }>
+<Box  sx={{  p:10, margin:'auto', maxWidth:'1100px', display: 'flex', flexDirection: 'column', alignItems:'stretch', justifyContent: 'space-between'} }>
 
     <Box  sx={{ pb:5} }  >
         
-        <Typography sx={{borderBottom: 1, borderColor: 'rgb(255,69,0)'}} variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
+        <Typography sx={{p:1,borderLeft:2, borderColor:'rgb(255,69,0)'}}  display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
 
           {props.title} 
 
@@ -30,26 +30,23 @@ const NewPages = (props) => (
 
         
 
-    <Box mb={10} sx={{ p:2, border: 2, borderColor: 'white'} }  >
+    <Box mb={10} sx={{ p:2,bgcolor: 'rgba(17,24,39,0.2)',boxShadow: 3} }  >
 
-      <Typography variant="overline" display="block" component="div" style={{ color:'white' ,fontSize: '15px'}} >
 
-        THE WEAPONS
+      <img  style={{ maxWidth: '100%' }} src={require('../assets/images/HighresScreenshot00034.png')} alt="social life"/> 
 
-      </Typography> 
-
-      <img  style={{ minWidth: '200px', maxWidth: '770px' }} src="images/HighresScreenshot00034.png" alt="social life"/> 
-
-        <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
+        <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'white' ,fontSize: '12px'}} >
 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum pretium, risus velit congue mi, vel tincidunt augue velit vel nunc. Sed vel tincidunt magna. Sed suscipit ex quis neque luctus, at tempor metus iaculis. Nullam aliquam aliquam dolor, sit amet ornare nulla. Praesent quis tempus elit. Sed auctor, augue id bibendum pretium, risus velit congue mi, vel tincidunt augue velit vel nunc. Sed vel tincidunt magna. Sed suscipit ex quis neque luctus, at tempor metus iaculis. Nullam aliquam aliquam dolor, sit amet ornare nulla. Praesent quis tempus elit. Sed auctor, augue id bibendum pretium, risus velit congue mi, vel tincidunt augue velit vel nunc. Sed vel tincidunt magna. Sed suscipit ex quis neque luctus, at tempor metus iaculis. Nullam aliquam aliquam dolor, sit amet ornare nulla. Praesent quis tempus elit.
               
         </Typography> 
     </Box>
 
-    <Box sx={{ p:2, border: 1, borderColor: 'rgb(56,56,56)'} }  >
+
+    <Box sx={{mb:2} }  >
       
-        <Box sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+        <Box sx={{ p:2, borderLeft: 2, borderColor: 'white'} }  >
+            
 
             <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
 
@@ -60,7 +57,7 @@ const NewPages = (props) => (
             </Typography> 
 
 
-            <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
+            <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'white' ,fontSize: '12px'}} >
 
               <li>first item</li>
               <li>second item</li>
@@ -69,70 +66,76 @@ const NewPages = (props) => (
             </Typography> 
 
         </Box>
+    </Box>
+
+    <Box sx={{mb:2} }  >
+      
+        <Box sx={{ p:2, borderLeft: 2, borderColor: 'white'} }  >
+          
+            <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
+          
+                <UpgradeRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
+
+                    Improvements
+
+            </Typography> 
 
 
-      <Box sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+            <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'white' ,fontSize: '12px'}} >
 
-      <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
+                <li>first item</li>
+                <li>second item</li>
+                <li>third item</li> 
 
-<UpgradeRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
-
-        Improvements
-
-        </Typography> 
-
-
-        <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
-
-          <li>first item</li>
-          <li>second item</li>
-          <li>third item</li> 
-
-        </Typography> 
-
+            </Typography> 
         </Box>
+    </Box>
 
-        <Box sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+    <Box sx={{mb:2} }  >
+      
+        <Box sx={{ p:2, borderLeft: 2, borderColor: 'white'} }  >
+          
+            <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
+          
+                <HandymanRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
 
-        <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
+                    Fixed
 
-          <HandymanRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
+            </Typography> 
 
-        Fixed
 
-        </Typography> 
+            <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'white' ,fontSize: '12px'}} >
 
-        <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
+                <li>first item</li>
+                <li>second item</li>
+                <li>third item</li> 
 
-          <li>first item</li>
-          <li>second item</li>
-          <li>third item</li> 
-
-        </Typography> 
+            </Typography> 
         </Box>
+    </Box>
 
-        <Box sx={{ p:2, borderBottom: 1, borderColor: 'rgba(255,69,0)'} }  >
+    <Box sx={{mb:2} }  >
+      
+        <Box sx={{ p:2, borderLeft: 2, borderColor: 'white'} }  >
+          
+            <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
+          
+                <RemoveCircleOutlineRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
 
-        <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
+                    Removed
 
-          <RemoveCircleOutlineRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
+            </Typography> 
 
-        Removed
 
-        </Typography> 
+            <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'white' ,fontSize: '12px'}} >
 
-        <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'grey' ,fontSize: '12px'}} >
+                <li>first item</li>
+                <li>second item</li>
+                <li>third item</li> 
 
-          <li>first item</li>
-          <li>second item</li>
-          <li>third item</li> 
-
-        </Typography> 
+            </Typography> 
         </Box>
-
-        </Box>
-
-
+    </Box>
 </Box>
 
 

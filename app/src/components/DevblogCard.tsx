@@ -13,7 +13,7 @@ type ActionAreaCardProps = {
 export default function ActionAreaCard(props:ActionAreaCardProps) {
 
   return (
-    <Card sx={{ height:'350px', bgcolor: "rgb(255, 255, 255)"}}>
+    <Card sx={{ height:'400px', bgcolor: 'rgba(17,24,39,0.2)',boxShadow: 3}}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -23,10 +23,10 @@ export default function ActionAreaCard(props:ActionAreaCardProps) {
         />
         <CardContent>
         
-          <Typography sx={{ fontWeight: 'bold',border:  2, borderColor: 'rgb(112,101,240)', display: 'flex',maxWidth: '180px'}} color='rgb(112,101,240)' gutterBottom variant="overline" component="div" style={{ fontSize: '12px'}}>
+          <Typography sx={{ fontWeight: 'bold',display: 'flex',maxWidth: '180px'}} color='white' gutterBottom variant="overline" component="div" style={{ fontSize: '15px'}}>
            {props.name} 
           </Typography> 
-          <Typography variant="body2" color="grey" style={{ fontSize: '12px'}}>
+          <Typography variant="body2" color="white" style={{ fontSize: '14px'}}>
             Lizards are a widespread group of squamate reptiles, with over 6,000
             species, ranging across all continents except Antarctica
             Lizards are a widespread group of squamate reptiles, with over 6,000

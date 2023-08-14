@@ -43,17 +43,17 @@ function ResponsiveAppBar() {
 
     return (
         
-        <AppBar  position="static" sx={{m:2, bgcolor:'transparent', borderBottom: 0}} style={{boxShadow: 'none'}} >
+        <AppBar  position="static" sx={{mb:5,mt:2,bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Box sx={{m:1, display:{md:'flex', xs: 'none'}, flexDirection:'column',justifyContent: 'center', alignItems: 'center'}}>
+                    <Box sx={{m:1, borderLeft:3, p:2, display:{md:'flex', xs: 'none'}, flexDirection:'column'}}>
 
                         <Typography sx={{}}  display="block" component="div" style={{ color:'white' ,fontSize: '34px'}} >
 
                             SOCIAL HOME
 
                         </Typography> 
-                        <Typography sx={{justifyContent: 'right'}}  display="block" component="div" style={{ color:'rgb(255,69,0)' ,fontSize: '18px'}} >
+                        <Typography sx={{textAlign: 'right'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
 
                             THE NEW IDENTITY
 
@@ -75,7 +75,7 @@ function ResponsiveAppBar() {
 
                         </IconButton>
 
-                        <Menu
+                        <Menu 
 
                             id="menu-appbar"
                             anchorEl={anchorElNav}
@@ -90,7 +90,7 @@ function ResponsiveAppBar() {
                             }}
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
-                            sx={{
+                            sx={{ 
                                 display: { xs: 'block', md: 'none' },
                             }}
                             >
@@ -124,7 +124,7 @@ function ResponsiveAppBar() {
                         
                     </Box>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+                    <Box sx={{ flexGrow: 1 ,display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
 
                         {isVisibled  ? pages.map((page, index) => (
                             <Link key={index} to={`/${path[index]}`} >
