@@ -174,7 +174,7 @@ export default function RegisterForm() {
             {error.email} 
             <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation' onBlur={OnBlur}/>
             {error.emailConfirm}
-            <Button onClick={() => HandleSubmit()} sx={{flexGrow: 1 , p:2, color:'white', bgcolor: 'rgba(17,24,39,0.2)', fontSize: 16, mt: 2, display: 'block',boxShadow: 3}}>
+            <Button onClick={() => HandleSubmit()} sx={{flexGrow: 1 , p:2, color:'white', bgcolor: 'rgba(17,24,39,0.4)', fontSize: 16, mt: 2, display: 'block',boxShadow: 3}}>
 
               Completed registration
 

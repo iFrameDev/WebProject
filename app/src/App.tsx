@@ -17,24 +17,26 @@ import {
 
 
 
+
 const queryClient = new QueryClient()
+
 
 export default function App() {
 
     return (
 
-        <Box sx={{}} >
+        <Box className="mainapp" >
 
-            <Box sx={{display:'flex', flexDirection:'column'}}>
+ 
             <QueryClientProvider client={queryClient}>
                 <AuthProvider>
-                    <Box > 
+    
 
                         <ResponsiveAppBar />
 
-                    </Box>
+             
 
-                    <Box  >
+              
 
                         <Routes>
 
@@ -42,14 +44,14 @@ export default function App() {
                             <Route path={'/login'} element={<Login />} />
                             <Route path={'/register'} element={<Register />} />
                             <Route path="*" element={<NotFound404 />} />
-                            <Route path='/Boutique' element={<NewPages title={'Motel and locations'.toUpperCase()}/>} />
+                            <Route path='/Boutique' element={<NewPages title={'DEVBLOG 1 : Motel and locations'.toUpperCase()}/>} />
                         
                         </Routes>
 
-                    </Box>
+         
                     </AuthProvider>
                     </QueryClientProvider>
-            </Box>
+      
        </Box>
     );
 }

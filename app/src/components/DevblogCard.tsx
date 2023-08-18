@@ -13,12 +13,12 @@ type ActionAreaCardProps = {
 export default function ActionAreaCard(props:ActionAreaCardProps) {
 
   return (
-    <Card sx={{ height:'400px', bgcolor: 'rgba(17,24,39,0.2)',boxShadow: 3}}>
+    <Card sx={{ height:'400px', bgcolor: 'rgba(17,24,39,0.5)',boxShadow: 3}}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image={require('../assets/images/HighresScreenshot00034.png')}
+          image={require('../assets/images/projectsc.png')}
           alt="social life"
         />
         <CardContent>
@@ -30,8 +30,8 @@ export default function ActionAreaCard(props:ActionAreaCardProps) {
             Lizards are a widespread group of squamate reptiles, with over 6,000
             species, ranging across all continents except Antarctica
             Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-            Lizards are a widespread group of squamate reptiles, with over 6,000
+            species, ranging across all
+            group of squamate reptiles, with over 6,000
             species, ranging across all continents except Antarctica
           </Typography>
 

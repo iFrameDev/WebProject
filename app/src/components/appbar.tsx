@@ -43,7 +43,7 @@ function ResponsiveAppBar() {
 
     return (
         
-        <AppBar  position="static" sx={{mb:5,mt:2,bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
+        <AppBar  position="static" sx={{p:1,mb:5,bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{m:1, borderLeft:3, p:2, display:{md:'flex', xs: 'none'}, flexDirection:'column'}}>
@@ -103,24 +103,11 @@ function ResponsiveAppBar() {
                         </Menu>
               
 
-                        <Typography
-                            variant="h5"
-                            noWrap
-                            component="a"
-                            href=""
-                            sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none', justifyContent: 'center' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            color: 'white',
-                            textDecoration: 'none',
-                            fontSize: {xs:32, md:50},
-                            p:1
-                            }}
-                        >
+                        <Typography sx={{display: { xs: 'flex', md: 'none', justifyContent: 'center' }}}  component="div" style={{ color:'white' ,fontSize: '30px'}} >
+
                             SOCIAL HOME
-                        </Typography>
+
+                        </Typography> 
                         
                     </Box>
 

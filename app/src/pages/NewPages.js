@@ -15,11 +15,11 @@ const NewPages = (props) => (
 
 
 
-<Box  sx={{  p:10, margin:'auto', maxWidth:'1100px', display: 'flex', flexDirection: 'column', alignItems:'stretch', justifyContent: 'space-between'} }>
+<Box  sx={{ p:10, margin:'auto', maxWidth:'1100px', display: 'flex', flexDirection: 'column', alignItems:'stretch', justifyContent: 'space-between'}}>
 
-    <Box  sx={{ pb:5} }  >
+    <Box  sx={{ mb:10} }  >
         
-        <Typography sx={{p:1,borderLeft:2, borderColor:'rgb(255,69,0)'}}  display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
+        <Typography sx={{p:1,borderBottom:2, borderColor:'white'}}  display="block" component="div" style={{ color:'white' ,fontSize: '25px'}} >
 
           {props.title} 
 
@@ -30,10 +30,10 @@ const NewPages = (props) => (
 
         
 
-    <Box mb={10} sx={{ p:2,bgcolor: 'rgba(17,24,39,0.2)',boxShadow: 3} }  >
+    <Box mb={5} sx={{ p:2,bgcolor: 'rgba(17,24,39,0.7)',boxShadow: 3} }  >
 
 
-      <img  style={{ maxWidth: '100%' }} src={require('../assets/images/HighresScreenshot00034.png')} alt="social life"/> 
+      <img  style={{ maxWidth: '100%' }} src={require('../assets/images/projectsc.png')} alt="social life"/> 
 
         <Typography sx={{p:2, fontWeight: "bold"}} gutterBottom variant="h6" component="div" style={{ color:'white' ,fontSize: '12px'}} >
 
@@ -45,7 +45,7 @@ const NewPages = (props) => (
 
     <Box sx={{mb:2} }  >
       
-        <Box sx={{ p:2, borderLeft: 2, borderColor: 'white'} }  >
+        <Box sx={{ p:2, borderLeft: 2, borderColor: 'white',bgcolor: 'rgba(17,24,39,0.7)',boxShadow: 3} }  >
             
 
             <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
@@ -68,7 +68,7 @@ const NewPages = (props) => (
         </Box>
     </Box>
 
-    <Box sx={{mb:2} }  >
+    <Box sx={{mb:2,bgcolor: 'rgba(17,24,39,0.7)',boxShadow: 3} }  >
       
         <Box sx={{ p:2, borderLeft: 2, borderColor: 'white'} }  >
           
@@ -91,7 +91,7 @@ const NewPages = (props) => (
         </Box>
     </Box>
 
-    <Box sx={{mb:2} }  >
+    <Box sx={{mb:2,bgcolor: 'rgba(17,24,39,0.7)',boxShadow: 3} }  >
       
         <Box sx={{ p:2, borderLeft: 2, borderColor: 'white'} }  >
           
@@ -114,7 +114,7 @@ const NewPages = (props) => (
         </Box>
     </Box>
 
-    <Box sx={{mb:2} }  >
+    <Box sx={{mb:2,bgcolor: 'rgba(17,24,39,0.7)',boxShadow: 3} }  >
       
         <Box sx={{ p:2, borderLeft: 2, borderColor: 'white'} }  >
           
