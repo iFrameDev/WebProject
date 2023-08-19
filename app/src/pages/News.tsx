@@ -6,8 +6,7 @@ import Typography from '@mui/material/Typography';
 
 const gridStyles = {
 
-p:1
-
+    p:1,
 
 };
   
@@ -18,7 +17,7 @@ const About = () => (
 
         <Box  sx={{ pb:5} }  >
         
-            <Typography sx={{p:1 ,borderLeft:2, borderColor:'rgb(255,69,0)'}} display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
+            <Typography sx={{p:1 ,borderLeft:2, borderColor:'rgb(255,69,0)'}} display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
 
                 NEWS 
 
@@ -26,16 +25,16 @@ const About = () => (
 
         </Box>
 
-        <Grid container sx={{...gridStyles}} spacing={3}>
+        <Grid container  sx={{...gridStyles}} spacing={3}>
 
-            <Grid item xl={4}>
-                <ActionAreaCard name='DEVBLOG 1'/>
+            <Grid item xl={12}>
+                <ActionAreaCard name='RESIDENTIAL'/>  
             </Grid>
             <Grid item xl={4}>
-                <ActionAreaCard name='DEVBLOG 2'/>
+                <ActionAreaCard name='Deep Sea'/>
             </Grid>
             <Grid item xl={4}>
-                <ActionAreaCard name='DEVBLOG 3'/>
+                <ActionAreaCard name='Bags to Battles'/>
             </Grid>
             <Grid item xl={4}>
                 <ActionAreaCard name='DEVBLOG 4'/>

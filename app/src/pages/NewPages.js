@@ -19,7 +19,7 @@ const NewPages = (props) => (
 
     <Box  sx={{ mb:10} }  >
         
-        <Typography sx={{p:1,borderBottom:2, borderColor:'white'}}  display="block" component="div" style={{ color:'white' ,fontSize: '25px'}} >
+        <Typography sx={{p:1,borderLeft:2, borderColor:'rgb(255,69,0)'}}  display="block" component="div" style={{ color:'white' ,fontSize: '25px'}} >
 
           {props.title} 
 

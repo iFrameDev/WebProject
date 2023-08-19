@@ -44,7 +44,7 @@ function ResponsiveAppBar() {
     return (
         
         <AppBar  position="static" sx={{p:1,mb:5,bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
-            <Container maxWidth="xl">
+            <Container  maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{m:1, borderLeft:3, p:2, display:{md:'flex', xs: 'none'}, flexDirection:'column'}}>
 
@@ -53,7 +53,7 @@ function ResponsiveAppBar() {
                             SOCIAL HOME
 
                         </Typography> 
-                        <Typography sx={{textAlign: 'right'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
+                        <Typography sx={{textAlign: 'right'}}  display="block" component="div" style={{ color:'rgb(255,69,0)' ,fontSize: '18px'}} >
 
                             THE NEW IDENTITY
 
@@ -119,7 +119,7 @@ function ResponsiveAppBar() {
 
                                     key={page}
                                     onClick={handleCloseNavMenu}
-                                    sx={{ letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', display: 'block',  border: page === 'PLAY SOCIAL LIFE' ? 2 : 'none', borderColor: page === 'PLAY SOCIAL LIFE' ? 'rgb(255,69,0)': 'none' }}
+                                    sx={{  letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', backgroundColor: page === 'PLAY SOCIAL LIFE' ? 'rgb(255,69,0)': '', display: 'block',  border: page === 'PLAY SOCIAL LIFE' ? 2 : 'none', borderColor: page === 'PLAY SOCIAL LIFE' ? 'rgb(255,69,0)': 'none' }}
                                     >
                                     {page}
 
