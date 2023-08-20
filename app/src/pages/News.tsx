@@ -13,7 +13,7 @@ const gridStyles = {
 
 const About = () => (
 
-    <Box sx={{ margin: 'auto', maxWidth:'1100px', display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'stretch', p:10}}>
+    <Box sx={{ margin: 'auto', maxWidth:'1100px', display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'stretch', p:5}}>
 
         <Box  sx={{ pb:5} }  >
         

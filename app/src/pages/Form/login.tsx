@@ -6,7 +6,7 @@ const LoginPage = () => (
 
 
 
-        <Box sx={{height:'100vh',display:'flex',  flexDirection: 'column', alignItems: 'stretch', margin:'auto', minWidth:'xs', maxWidth:'sm'}}>
+        <Box sx={{display:'flex',  flexDirection: 'column', alignItems: 'stretch', margin:'auto', minWidth:'xs', maxWidth:'sm'}}>
 
             <Login />
 

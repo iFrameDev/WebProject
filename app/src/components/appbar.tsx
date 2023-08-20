@@ -13,11 +13,12 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthProvider';
 import UserProfil from '../components/user_profil';
 import Avatar from '@mui/material/Avatar';
+import Logo from './logo';
 
 
 
-const pages = ['News', 'Boutique', 'PLAY SOCIAL LIFE'];
-const path = ['News', 'Boutique', 'login'];
+const pages = ['home','News', 'Boutique', 'PLAY SOCIAL LIFE'];
+const path = ['','News', 'Boutique', 'login'];
 const isVisibled = true;
 
 
@@ -43,22 +44,10 @@ function ResponsiveAppBar() {
 
     return (
         
-        <AppBar  position="static" sx={{p:1,mb:5,bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
+        <AppBar  position="static" sx={{mb:9,p:4, bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
             <Container  maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Box sx={{m:1, borderLeft:3, p:2, display:{md:'flex', xs: 'none'}, flexDirection:'column'}}>
 
-                        <Typography sx={{}}  display="block" component="div" style={{ color:'white' ,fontSize: '34px'}} >
-
-                            SOCIAL HOME
-
-                        </Typography> 
-                        <Typography sx={{textAlign: 'right'}}  display="block" component="div" style={{ color:'rgb(255,69,0)' ,fontSize: '18px'}} >
-
-                            THE NEW IDENTITY
-
-                        </Typography> 
-                    </Box>
                     
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
 
@@ -111,7 +100,7 @@ function ResponsiveAppBar() {
                         
                     </Box>
 
-                    <Box sx={{ flexGrow: 1 ,display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+                    <Box sx={{ flexGrow: 1 ,display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-start' }}>
 
                         {isVisibled  ? pages.map((page, index) => (
                             <Link key={index} to={`/${path[index]}`} >
@@ -169,7 +158,15 @@ function ResponsiveAppBar() {
                     </Box>
                 </Toolbar>
             </Container>
+
+            <Box sx={{ mt:5, mr:30,display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+
+                <Logo />
+
+            </Box>
+            
         </AppBar>
+
     );
 }
 

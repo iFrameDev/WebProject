@@ -74,7 +74,7 @@ export default function LoginForm() {
 
     return (
 
-        <Box  sx={{display: 'flex',m:1,flexDirection: 'column', mt:10, p:1}}  >
+        <Box  sx={{display: 'flex',flexDirection: 'column',  p:1}}  >
             
         <Typography sx={{ letterSpacing: '.2rem',p:1,borderLeft: 2, borderColor:'rgb(255,69,0)'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
 

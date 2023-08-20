@@ -15,7 +15,7 @@ const NewPages = (props) => (
 
 
 
-<Box  sx={{ p:10, margin:'auto', maxWidth:'1100px', display: 'flex', flexDirection: 'column', alignItems:'stretch', justifyContent: 'space-between'}}>
+<Box  sx={{  p:5, margin:'auto', maxWidth:'1100px', display: 'flex', flexDirection: 'column', alignItems:'stretch', justifyContent: 'space-between'}}>
 
     <Box  sx={{ mb:10} }  >
         

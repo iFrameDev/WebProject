@@ -17,9 +17,9 @@ type ActionAreaCardProps = {
 export default function ActionAreaCard(props:ActionAreaCardProps) {
 
   return (
-    <Card sx={{ height:'400px', bgcolor: 'rgb(92 105 133 / 45%)',boxShadow: 3}}>
+    <Card sx={{ display:'flex', height:'400px', bgcolor: 'rgb(92 105 133 / 45%)',boxShadow: 3}}>
       <CardActionArea sx={{ height:'100%'}}>
-        <CardMedia
+        <CardMedia 
           component="img"
           height="140"
           image={require('../assets/images/projectsc.png')}
