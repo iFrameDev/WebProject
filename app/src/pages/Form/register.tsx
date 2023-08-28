@@ -1,17 +1,17 @@
 import Box from '@mui/material/Box';
-import RegisterForm from "../../components/register";
+import RegisterForm from '../../components/register'
 
 
-const Register = () => (
+const Register = () => {
 
-
+    return (
 
     <Box sx={{p:1, display:'flex', flexDirection: 'column', alignItems: 'stretch', margin:'auto', minWidth:'xs', maxWidth:'sm'}}>
 
         <RegisterForm />
 
-    </Box>
+    </Box>)
 
-);
+};
 
 export default Register;

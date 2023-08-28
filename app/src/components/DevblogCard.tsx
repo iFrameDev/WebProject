@@ -17,28 +17,23 @@ type ActionAreaCardProps = {
 export default function ActionAreaCard(props:ActionAreaCardProps) {
 
   return (
-    <Card sx={{ display:'flex', height:'400px', bgcolor: 'rgb(92 105 133 / 45%)',boxShadow: 3}}>
+    <Card sx={{ display:'flex',  minHeight:'400px', height:'auto', bgcolor: 'rgb(255 255 255 / 16%)',boxShadow: 3, borderRadius:0}}>
       <CardActionArea sx={{ height:'100%'}}>
         <CardMedia 
           component="img"
-          height="140"
+          height="200"
           image={require('../assets/images/projectsc.png')}
           alt="social life"
         />
         <CardContent>
 
-        <Chip sx={{mr:1, border:1, borderRadius: 0,borderColor:'rgb(255,69,0)',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="DEVBLOG"  color="primary"  size="small"></Chip>
-        <Chip sx={{mr:1, border:1, borderRadius: 0,borderColor:'white',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="14/12/2022" color="primary" size="small"/>
+        <Chip sx={{m:0.5, borderLeft:2, borderRadius: 1,borderColor:'rgb(255,69,0)',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="DEVBLOG"  color="primary"  size="small"></Chip>
+        <Chip sx={{m:0.5, borderLeft:2, borderRadius: 1,borderColor:'rgb(255,69,0)',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="14/12/2022" color="primary" size="small"/>
           <Typography sx={{ fontWeight: 'bold',display: 'flex',maxWidth: '180px'}} color='white' gutterBottom variant="overline" component="div" style={{ fontSize: '15px'}}>
            {props.name} 
           </Typography> 
           <Typography variant="body2" color="white" style={{ fontSize: '14px'}}>
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all
-            group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          This month's Rust update includes an updated wounded UI, Chat emoji support, brick-building skin, burst module buff, and the usual fixes and improvements.
           </Typography>
 
         </CardContent>

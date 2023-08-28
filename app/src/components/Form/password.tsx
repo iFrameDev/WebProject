@@ -6,10 +6,23 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 
-export default function PasswordForm (props){
+
+type PasswordFormProps = {
+    label: string;
+    value: string;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    name: string;
+    handleBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  }
 
 
-    const [showPassword, setShowPassword] = useState(false);
+
+
+
+const PasswordForm:React.FC<PasswordFormProps> = (props) => {
+
+
+    const [showPassword, setShowPassword] = useState<boolean>(false);
 
     const handleClickShowPassword = () => {
       setShowPassword(!showPassword);
@@ -55,3 +68,5 @@ export default function PasswordForm (props){
     );
     
 }
+
+export default PasswordForm;

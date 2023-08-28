@@ -13,11 +13,11 @@ const gridStyles = {
 
 const About = () => (
 
-    <Box sx={{ margin: 'auto', maxWidth:'1100px', display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'stretch', p:5}}>
+    <Box sx={{ margin: 'auto', maxWidth:'1100px', display:'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'stretch', p:5}}>
 
         <Box  sx={{ pb:5} }  >
         
-            <Typography sx={{p:1 ,borderLeft:2, borderColor:'rgb(255,69,0)'}} display="block" component="div" style={{ color:'white' ,fontSize: '20px'}} >
+            <Typography sx={{p:1 ,m:1,borderRight:2, borderColor:'white'}} display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
 
                 NEWS 
 
@@ -45,10 +45,11 @@ const About = () => (
             <Grid item xl={4}>
                 <ActionAreaCard name='DEVBLOG 6'/>
         </Grid>
-
+    
   
 
 </Grid>
+
 
 </Box>
 
