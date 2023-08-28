@@ -140,31 +140,38 @@ const RegisterForm:React.FC = () => {
 
   return (
 
-    <Box sx={{ display: 'flex', flexDirection: 'column', p:1, m:1}}>
+    <Box sx={{ display: 'flex', flexDirection: 'row', p:1, alignItems:'stretch', m:1, height:300 }}>
 
-            <Typography sx={{letterSpacing: '.2rem',mb:3,  p:1,borderLeft: 2, borderColor:'rgb(255,69,0)'}} display="block" component="div" style={{ color:'white' ,fontSize: '17px'}} >
+            <Box>
+            <Typography sx={{m:1, letterSpacing: '.2rem',mb:3,  p:1, borderRight: 2, borderColor:'rgb(255,69,0)',color:'white' ,fontSize: '17px' }} display="block" component="div">
 
                 CREATE YOUR ACCOUNT
 
             </Typography>
-
+            </Box>
             
-            <UsernameForm label='Username' name='username' value={formData.username} onChange={handleChange} />            
-            {error.username && <FormError errorText={error.username} />}
-            <PasswordForm  name='password' label='Password'value={formData.password} onChange={handleChange} />
-            {error.password && <FormError errorText={error.password} />}
-            <PasswordForm label='Password Confirmation' name='passwordConfirm' value={formData.passwordConfirm} onChange={handleChange} />
-            {error.passwordConfirm && <FormError errorText={error.passwordConfirm}></FormError>}
-            <EmailForms name='email' value={formData.email} onChange={handleChange} />
-            {error.email && <FormError errorText={error.email} />}
-            <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation' />
-            {error.emailConfirm && <FormError errorText={error.emailConfirm}></FormError>}
-            <Button onClick={() => HandleSubmit()} sx={{flexGrow: 1 , p:2, color:'white', bgcolor: 'rgba(17,24,39,0.4)', fontSize: 16, mt: 2, display: 'block',boxShadow: 3}}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', m:1,flex: 1,  minWidth: 400, maxWidth: 400}}>
+            
+                <UsernameForm  label='Username' name='username' value={formData.username} onChange={handleChange} />            
+                {error.username && <FormError errorText={error.username} />}
+                <PasswordForm  name='password' label='Password'value={formData.password} onChange={handleChange} />
+                {error.password && <FormError errorText={error.password} />}
+                <PasswordForm label='Password Confirmation' name='passwordConfirm' value={formData.passwordConfirm} onChange={handleChange} />
+                {error.passwordConfirm && <FormError errorText={error.passwordConfirm}></FormError>}
 
-              Completed registration
+            </Box>
 
-            </Button>
+            <Box sx={{ display: 'flex', flexDirection: 'column', m:1, flex: 1, minWidth: 400, maxWidth: 400}}>
+                <EmailForms name='email' value={formData.email} onChange={handleChange} />
+                {error.email && <FormError errorText={error.email} />}
+                <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation' />
+                {error.emailConfirm && <FormError errorText={error.emailConfirm}></FormError>}
+                <Button onClick={() => HandleSubmit()} sx={{flexGrow: 1 , p:2, color:'white', bgcolor: 'rgba(17,24,39,0.4)', fontSize: 16, mt: 2, display: 'block',boxShadow: 3,border: 2, borderColor:'rgb(255,69,0)'}}>
 
+                Completed registration
+
+                </Button>
+            </Box>
 
     </Box>
 );

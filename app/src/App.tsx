@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 import ResponsiveAppBar from './components/appbar';
 import News from './pages/News'
-import NotFound404 from './pages/NotFound404.js'
+import NotFound404 from './pages/NotFound404'
 import NewPages from './pages/NewPages';
 import Login from './pages/Form/login';
 import Register from './pages/Form/register'

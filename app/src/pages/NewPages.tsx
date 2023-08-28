@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import React from "react";
 import Typography from '@mui/material/Typography';
 import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
 import UpgradeRoundedIcon from '@mui/icons-material/UpgradeRounded';
@@ -9,9 +8,11 @@ import RemoveCircleOutlineRoundedIcon from '@mui/icons-material/RemoveCircleOutl
 
 
 
+type propsType = {
+    title:string;
+}
 
-
-const NewPages = (props) => (
+const NewPages = (props:propsType) => (
 
 
 
@@ -50,7 +51,7 @@ const NewPages = (props) => (
 
             <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
 
-              <AddCircleOutlineRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
+              <AddCircleOutlineRoundedIcon  sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
             
               Features
 
@@ -74,7 +75,7 @@ const NewPages = (props) => (
           
             <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
           
-                <UpgradeRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
+                <UpgradeRoundedIcon  sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
 
                     Improvements
 
@@ -97,7 +98,7 @@ const NewPages = (props) => (
           
             <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
           
-                <HandymanRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
+                <HandymanRoundedIcon  sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
 
                     Fixed
 
@@ -120,7 +121,7 @@ const NewPages = (props) => (
           
             <Typography variant="overline" display="flex" alignItems='center' component="div" style={{ color:'white' ,fontSize: '15px'}} >
           
-                <RemoveCircleOutlineRoundedIcon color="white" sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
+                <RemoveCircleOutlineRoundedIcon  sx={{  fontSize: 25, alignContent: 'center', display: { xs: 'none', md: 'flex' }, mr: 1}} />
 
                     Removed
 

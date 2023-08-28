@@ -108,7 +108,7 @@ function ResponsiveAppBar() {
 
                                     key={page}
                                     onClick={handleCloseNavMenu}
-                                    sx={{  letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', backgroundColor: page === 'PLAY SOCIAL LIFE' ? 'rgb(255,69,0)': '', display: 'block',  border: page === 'PLAY SOCIAL LIFE' ? 2 : 'none', borderColor: page === 'PLAY SOCIAL LIFE' ? 'rgb(255,69,0)': 'none' }}
+                                    sx={{  letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: page === 'PLAY SOCIAL LIFE' ? 'white': 'white', backgroundColor: page === 'PLAY SOCIAL LIFE' ? 'transparent': '', display: 'block',  border: page === 'PLAY SOCIAL LIFE' ? 2 : 'none', borderColor: page === 'PLAY SOCIAL LIFE' ? 'rgb(255,69,0)': 'none' }}
                                     >
                                     {page}
 
