@@ -19,7 +19,8 @@ export type LoginResponse = {
 
 export const UserLogin = async (username:string, password:string):Promise<AxiosResponse> => {
     
-    const res:AxiosResponse = await axios.post(`${process.env.REACT_APP_BASE_API_URL}/login/`,{username, password})
+    const res:AxiosResponse = await axios.get('http://localhost:3001/')///post(`${process.env.REACT_APP_BASE_API_URL}/login/`,{username, password})
+    console.log('test' + res)
     return res;
 }
 

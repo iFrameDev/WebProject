@@ -166,7 +166,7 @@ const RegisterForm:React.FC = () => {
                 {error.email && <FormError errorText={error.email} />}
                 <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation' />
                 {error.emailConfirm && <FormError errorText={error.emailConfirm}></FormError>}
-                <Button onClick={() => HandleSubmit()} sx={{flexGrow: 1 , p:2, color:'white', bgcolor: 'rgba(17,24,39,0.4)', fontSize: 16, mt: 2, display: 'block',boxShadow: 3,border: 2, borderColor:'rgb(255,69,0)'}}>
+                <Button onClick={() => HandleSubmit()} sx={{flexGrow: 1 , p:2, color:'white', bgcolor: 'rgba(17,24,39,0.4)', fontSize: 16, mt: 2, display: 'block',boxShadow: 3,border: 2, borderColor:'rgb(255,69,0)', minHeight:'90px',maxHeight:'90px'}}>
 
                 Completed registration
 

@@ -15,6 +15,7 @@ import Typography from '@mui/material/Typography';
 
 
 
+
 export default function LoginForm() {
 
     type loginForm = {
@@ -35,12 +36,15 @@ export default function LoginForm() {
         {
             onSuccess: (response:AxiosResponse<LoginResponse>) => {
 
-                const accessToken = response.data.access_token;
-                const username = response.data.username;
-                const expirationTimeInMinutes = 60;
-                Cookies.set('access_token', accessToken, { expires: expirationTimeInMinutes / (24 * 60) });
-                Cookies.set('username', username);
-                setIsAuthenticated(true);
+                if(response.data.access_token){
+
+                    const accessToken = response.data.access_token;
+                    const username = response.data.username;
+                    const expirationTimeInMinutes = 60;
+                    Cookies.set('access_token', accessToken, { expires: expirationTimeInMinutes / (24 * 60) });
+                    Cookies.set('username', username);
+                    setIsAuthenticated(true);
+                }
 
         },
     });
@@ -90,7 +94,7 @@ export default function LoginForm() {
                     <PasswordForm  name='password' label='Password'value={formData.password} onChange={handleChange}/>
                 </Box>
                 {error}
-                <Button  type="submit" sx={{ flexGrow: 1 , p:1, color:'white',fontSize: 16, m:1,display: 'block', bgcolor: 'rgba(17,24,39,0.4)',boxShadow: 3}}>
+                <Button  type="submit" sx={{ flexGrow: 1 , p:1, color:'white',fontSize: 16, m:1,display: 'block',border: 2, borderColor:'rgb(255,69,0)', bgcolor: 'rgba(17,24,39,0.4)',boxShadow: 3}}>
 
                     {loginMutation.isLoading ? <CircularIndeterminate/> : "CONNEXION"}
 
