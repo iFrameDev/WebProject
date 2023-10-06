@@ -13,16 +13,19 @@ export type LoginResponse = {
     exp:Date;
     status:number;
     data:string;
-    username:string
+    username:string;
+    user_id: number;
 }
 
 
-export const UserLogin = async (username:string, password:string):Promise<AxiosResponse> => {
-    
-    const res:AxiosResponse = await axios.get('http://localhost:3001/')///post(`${process.env.REACT_APP_BASE_API_URL}/login/`,{username, password})
-    console.log('test' + res)
-    return res;
-}
+export const UserLogin = async (username: string, password: string): Promise<AxiosResponse> => {
+    try {
+        const res: AxiosResponse = await axios.post(`${process.env.REACT_APP_BASE_API_URL}/auth/signin`, { username, password });
+        return res;
+    } catch (error) {
+        throw error; // Vous pouvez gérer l'erreur ici ou la propager vers le composant qui appelle cette fonction.
+    }
+};
 
 export const DecodeJWT = (data:string) =>{
     var decoded:DecodedToken = jwt_decode(data);

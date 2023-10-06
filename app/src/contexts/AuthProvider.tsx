@@ -1,4 +1,4 @@
-import React, { createContext,useContext, useState, useEffect} from 'react';
+import React, { createContext,useContext, useState} from 'react';
 import { useQueryClient} from '@tanstack/react-query';
 import Cookies from 'js-cookie';
 
@@ -8,14 +8,25 @@ type AuthContextProps = {
     isAuthenticated: boolean;
     logout: () => Promise<void>;
     setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
+    setUserData: React.Dispatch<React.SetStateAction<UserData>>;
+    userData: UserData;
 
 };
-  
+
+type UserData = {
+  user_id: number;
+  username:string
+}  
+
+
+
 const AuthContext = createContext<AuthContextProps>({
 
     isAuthenticated: false,
     logout: async () => {},
-    setIsAuthenticated: () => {}
+    setIsAuthenticated: () => {},
+    setUserData: () => {},
+    userData: { user_id: 0, username: '' }
   });
 
 const useAuth = () => useContext(AuthContext);
@@ -26,6 +37,11 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
         Cookies.get('access_token') !== undefined
       );
 
+      const [userData, setUserData] = useState<UserData>({
+        user_id: 0,
+        username: ''
+      });
+
     const queryClient = useQueryClient();
 
 
@@ -34,24 +50,9 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
         Cookies.remove('access_token');
         queryClient.resetQueries(); // Réinitialisation des requêtes effectuées avec react-query
     };
-
-        
-    useEffect(() => {
-        const token = Cookies.get('access_token');
-        
-        if (token) {
-          setIsAuthenticated(true);
-        } 
-        else {
-          Cookies.remove('access_token');
-          setIsAuthenticated(false);
-        }
-
-    }, [isAuthenticated]);
-      
     
     return (
-      <AuthContext.Provider value={{ isAuthenticated, logout: handleLogout, setIsAuthenticated}}>
+      <AuthContext.Provider value={{ isAuthenticated, logout: handleLogout, setIsAuthenticated, setUserData, userData}}>
         {children}
       </AuthContext.Provider>
     );

@@ -1,33 +1,15 @@
-import React, {useState, useEffect} from 'react'
-import Cookies from "js-cookie";
+import {useState, useEffect} from 'react'
 import { useAuth } from '../contexts/AuthProvider';
 
 
 export default function UserProfil() {
 
     const [localUsername, setLocalUsername] = useState('');
-    const {isAuthenticated} = useAuth();
+    const {isAuthenticated, userData} = useAuth();
 
     useEffect(() => {
-
-        if(isAuthenticated){
-
-            const storedUsername = Cookies.get('username');
-            if (storedUsername) {
-                setLocalUsername(storedUsername);
-            }
-        }
-        else {
-
-            const storedUsername = Cookies.get('username');
-            if (storedUsername) {
-                Cookies.remove('username')
-                setLocalUsername('');
-            }
-
-        }
-
-    }, [isAuthenticated]); 
+        setLocalUsername(isAuthenticated ? userData.username : '');
+      }, [isAuthenticated, userData.username]); 
 
     return (
         isAuthenticated ? (<p>{localUsername} </p>) : null

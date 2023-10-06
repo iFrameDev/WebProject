@@ -120,13 +120,13 @@ const RegisterForm:React.FC = () => {
             try{
             
             
-                await axios.post('http://localhost:8000/user/', {
-
+                const res = await axios.post('http://localhost:3001/auth/register', {
                 
                     username: formData.username,
                     password: formData.password,
                     email: formData.email                
                 });
+                console.log(res);
 
 
             }
@@ -140,7 +140,9 @@ const RegisterForm:React.FC = () => {
 
   return (
 
-    <Box sx={{ display: 'flex', flexDirection: 'row', p:1, alignItems:'stretch', m:1, height:300 }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', p:1, alignItems:'stretch', m:1, height:300 }}>
+
+        <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap:'wrap', p:1, alignContent:'center', m:1, height:300 }}>
 
             <Box>
             <Typography sx={{m:1, letterSpacing: '.2rem',mb:3,  p:1, borderRight: 2, borderColor:'rgb(255,69,0)',color:'white' ,fontSize: '17px' }} display="block" component="div">
@@ -166,13 +168,18 @@ const RegisterForm:React.FC = () => {
                 {error.email && <FormError errorText={error.email} />}
                 <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation' />
                 {error.emailConfirm && <FormError errorText={error.emailConfirm}></FormError>}
-                <Button onClick={() => HandleSubmit()} sx={{flexGrow: 1 , p:2, color:'white', bgcolor: 'rgba(17,24,39,0.4)', fontSize: 16, mt: 2, display: 'block',boxShadow: 3,border: 2, borderColor:'rgb(255,69,0)', minHeight:'90px',maxHeight:'90px'}}>
-
-                Completed registration
-
-                </Button>
+                
             </Box>
+            
+        </Box>
+        <Box sx={{display: 'flex', flexDirection:'row-reverse'}}>
+                    <Button onClick={() => HandleSubmit()} sx={{p:2, color:'white', bgcolor: 'rgba(17,24,39,0.4)', fontSize: 16, mt: 2, boxShadow: 3,border: 2, borderColor:'rgb(255,69,0)', maxHeight:'90px'}}>
 
+                        Completed registration
+
+                    </Button>
+
+                </Box>
     </Box>
 );
 

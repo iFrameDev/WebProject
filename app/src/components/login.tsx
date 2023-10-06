@@ -23,7 +23,7 @@ export default function LoginForm() {
         password:string
     }
 
-    const { setIsAuthenticated} = useAuth();
+    const { setIsAuthenticated, setUserData} = useAuth();
 
     const [error, setError] = useState('')
 
@@ -39,10 +39,9 @@ export default function LoginForm() {
                 if(response.data.access_token){
 
                     const accessToken = response.data.access_token;
-                    const username = response.data.username;
+                    setUserData({user_id: response.data.user_id, username: response.data.username});
                     const expirationTimeInMinutes = 60;
                     Cookies.set('access_token', accessToken, { expires: expirationTimeInMinutes / (24 * 60) });
-                    Cookies.set('username', username);
                     setIsAuthenticated(true);
                 }
 
