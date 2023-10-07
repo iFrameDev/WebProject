@@ -140,19 +140,19 @@ const RegisterForm:React.FC = () => {
 
   return (
 
-    <Box sx={{ display: 'flex', flexDirection: 'column', p:1, alignItems:'stretch', m:1, height:300 }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', p:1,  m:1}}>
 
-        <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap:'wrap', p:1, alignContent:'center', m:1, height:300 }}>
+        <Box sx={{ display: 'flex', flexDirection: { xl: 'row', xs: 'column' }, flexWrap:'wrap', p:1,  m:1 }}>
 
             <Box>
-            <Typography sx={{m:1, letterSpacing: '.2rem',mb:3,  p:1, borderRight: 2, borderColor:'rgb(255,69,0)',color:'white' ,fontSize: '17px' }} display="block" component="div">
+                <Typography sx={{m:1, letterSpacing: '.2rem',mb:3,  p:1, borderRight: 2, borderColor:'rgb(255,69,0)',color:'white' ,fontSize: '17px' }} display="block" component="div">
 
-                CREATE YOUR ACCOUNT
+                    CREATE YOUR ACCOUNT
 
-            </Typography>
+                </Typography>
             </Box>
             
-            <Box sx={{ display: 'flex', flexDirection: 'column', m:1,flex: 1,  minWidth: 400, maxWidth: 400}}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', minWidth: 400, maxWidth: 400}}>
             
                 <UsernameForm  label='Username' name='username' value={formData.username} onChange={handleChange} />            
                 {error.username && <FormError errorText={error.username} />}
@@ -163,24 +163,29 @@ const RegisterForm:React.FC = () => {
 
             </Box>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', m:1, flex: 1, minWidth: 400, maxWidth: 400}}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', minWidth: 400, maxWidth: 400}}>
                 <EmailForms name='email' value={formData.email} onChange={handleChange} />
                 {error.email && <FormError errorText={error.email} />}
                 <EmailForms name='emailConfirm' value={formData.emailConfirm} onChange={handleChange} label='Email Confirmation' />
                 {error.emailConfirm && <FormError errorText={error.emailConfirm}></FormError>}
                 
             </Box>
+
+            
             
         </Box>
-        <Box sx={{display: 'flex', flexDirection:'row-reverse'}}>
-                    <Button onClick={() => HandleSubmit()} sx={{p:2, color:'white', bgcolor: 'rgba(17,24,39,0.4)', fontSize: 16, mt: 2, boxShadow: 3,border: 2, borderColor:'rgb(255,69,0)', maxHeight:'90px'}}>
+        <Box sx={{ display: 'flex', m:1, justifyContent:{ xl: 'right', xs: 'center' }}}>
 
-                        Completed registration
+                <Button onClick={() => HandleSubmit()} sx={{display: 'flex',p:2, color:'white', bgcolor: 'rgba(17,24,39,0.4)', fontSize: 16, mt: 2, boxShadow: 3,border: 2, borderColor:'rgb(255,69,0)', maxHeight:'90px'}}>
 
-                    </Button>
+                    Completed registration
 
-                </Box>
+                </Button>
+
+        </Box>
+        
     </Box>
+    
 );
 
 }
