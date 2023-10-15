@@ -46,10 +46,15 @@ function ResponsiveAppBar() {
         
         <AppBar  position="static" sx={{mb:9,p:4, bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
             <Container  maxWidth="xl">
-                <Toolbar disableGutters>
+                <Toolbar disableGutters sx={{display:'flex', justifyContent:'center'}}>
 
-                    
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{display: { xs: 'flex', md: 'none'}, alignItems:'center'}}>
+
+                        <Typography sx={{display: { xs: 'flex', md: 'none', justifyContent: 'center' }}}  component="div" style={{ color:'white' ,fontSize: '30px'}} >
+
+                            SOCIAL HOME
+
+                        </Typography> 
 
                         <IconButton
                         size="large"
@@ -57,7 +62,7 @@ function ResponsiveAppBar() {
                         aria-controls="menu-appbar"
                         aria-haspopup="true"
                         onClick={handleOpenNavMenu}
-                        color="inherit"
+                        sx={{ color: '#1976d2' }}
                         >
 
                             <MenuIcon />
@@ -70,7 +75,7 @@ function ResponsiveAppBar() {
                             anchorEl={anchorElNav}
                             anchorOrigin={{
                                 vertical: 'bottom',
-                                horizontal: 'left',
+                                horizontal: 'right',
                             }}
                             keepMounted
                             transformOrigin={{
@@ -79,8 +84,12 @@ function ResponsiveAppBar() {
                             }}
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
+                 
+             
                             sx={{ 
                                 display: { xs: 'block', md: 'none' },
+                                
+                                 
                             }}
                             >
                                 {pages.map((page) => (
@@ -90,13 +99,6 @@ function ResponsiveAppBar() {
                                     </MenuItem>
                                 ))}
                         </Menu>
-              
-
-                        <Typography sx={{display: { xs: 'flex', md: 'none', justifyContent: 'center' }}}  component="div" style={{ color:'white' ,fontSize: '30px'}} >
-
-                            SOCIAL HOME
-
-                        </Typography> 
                         
                     </Box>
 

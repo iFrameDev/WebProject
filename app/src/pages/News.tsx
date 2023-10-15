@@ -13,11 +13,11 @@ const gridStyles = {
 
 const About = () => (
 
-    <Box sx={{ margin: 'auto', maxWidth:'1100px', display:'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'stretch', p:5}}>
+    <Box sx={{ margin: 'auto', maxWidth:'1100px', display:'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'stretch'}}>
 
         <Box  sx={{ pb:5} }  >
         
-            <Typography sx={{p:1 ,m:1,borderRight:2, borderColor:'white'}} display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
+            <Typography sx={{p:1 ,m:1,borderRight:3, borderColor:'#1976d2'}} display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
 
                 NEWS 
 

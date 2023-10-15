@@ -140,12 +140,12 @@ const RegisterForm:React.FC = () => {
 
   return (
 
-    <Box sx={{ display: 'flex', flexDirection: 'column', p:1,  m:1}}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', p:1,  m:1, bgcolor:'rgb(67 71 77 / 30%)'}}>
 
         <Box sx={{ display: 'flex', flexDirection: { xl: 'row', xs: 'column' }, flexWrap:'wrap', p:1,  m:1 }}>
 
             <Box>
-                <Typography sx={{m:1, letterSpacing: '.2rem',mb:3,  p:1, borderRight: 2, borderColor:'rgb(255,69,0)',color:'white' ,fontSize: '17px' }} display="block" component="div">
+                <Typography sx={{m:1, letterSpacing: '.2rem',mb:3,  p:1, borderRight: 2, borderColor:'#1976d2',color:'white' ,fontSize: '17px' }} display="block" component="div">
 
                     CREATE YOUR ACCOUNT
 
@@ -176,7 +176,7 @@ const RegisterForm:React.FC = () => {
         </Box>
         <Box sx={{ display: 'flex', m:1, justifyContent:{ xl: 'right', xs: 'center' }}}>
 
-                <Button onClick={() => HandleSubmit()} sx={{display: 'flex',p:2, color:'white', bgcolor: 'rgba(17,24,39,0.4)', fontSize: 16, mt: 2, boxShadow: 3,border: 2, borderColor:'rgb(255,69,0)', maxHeight:'90px'}}>
+                <Button onClick={() => HandleSubmit()} sx={{display: 'flex',p:2, color:'white', bgcolor: '#1976d2', fontSize: 16, mt: 2, boxShadow: 3,border: 1, borderColor:'#1976d2', maxHeight:'90px'}}>
 
                     Completed registration
 

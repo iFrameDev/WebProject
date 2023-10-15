@@ -10,7 +10,7 @@ html, body{
     margin: 0;
     padding: 0;
 
-    background-image: linear-gradient(rgb(34 40 53), rgba(34,40,53, 0.8)),
+    background-image: linear-gradient(rgb(34 40 53), rgba(34,40,53, 0.3)),
                   url("assets/images/projectsc.png");
     background-repeat: no-repeat;
     background-size: cover;

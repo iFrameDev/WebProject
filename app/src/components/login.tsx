@@ -77,9 +77,9 @@ export default function LoginForm() {
 
     return (
 
-        <Box  sx={{display: 'flex',flexDirection: 'column',  p:1}}  >
+        <Box  sx={{display: 'flex',flexDirection: 'column',  p:1, bgcolor:'rgb(67 71 77 / 30%)'}}  >
             
-        <Typography sx={{ letterSpacing: '.2rem',p:1,borderLeft: 2, borderColor:'rgb(255,69,0)'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
+        <Typography sx={{ letterSpacing: '.2rem',p:1,borderLeft: 2, borderColor:'#1976d2'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
 
         LOGIN
 
@@ -93,7 +93,7 @@ export default function LoginForm() {
                     <PasswordForm  name='password' label='Password'value={formData.password} onChange={handleChange}/>
                 </Box>
                 {error}
-                <Button  type="submit" sx={{ flexGrow: 1 , p:1, color:'white',fontSize: 16, m:1,display: 'block',border: 2, borderColor:'rgb(255,69,0)', bgcolor: 'rgba(17,24,39,0.4)',boxShadow: 3}}>
+                <Button  type="submit" sx={{ flexGrow: 1 , p:1, color:'white',fontSize: 16, m:1,display: 'block',border: 2, borderColor:'#1976d2', bgcolor: '#1976d2',boxShadow: 3}}>
 
                     {loginMutation.isLoading ? <CircularIndeterminate/> : "CONNEXION"}
 

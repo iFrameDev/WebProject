@@ -17,7 +17,7 @@ type ActionAreaCardProps = {
 export default function ActionAreaCard(props:ActionAreaCardProps) {
 
   return (
-    <Card sx={{ display:'flex',  minHeight:'400px', height:'auto', bgcolor: 'rgb(255 255 255 / 16%)',boxShadow: 3, borderRadius:0}}>
+    <Card sx={{ display:'flex',  minHeight:'400px', height:'auto', bgcolor: 'rgb(67 71 77 / 90%)',boxShadow: 10, borderRadius:0}}>
       <CardActionArea sx={{ height:'100%'}}>
         <CardMedia 
           component="img"
@@ -27,8 +27,8 @@ export default function ActionAreaCard(props:ActionAreaCardProps) {
         />
         <CardContent>
 
-        <Chip sx={{m:0.5, borderLeft:2, borderRadius: 0,borderColor:'rgb(255,69,0)',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="DEVBLOG"  color="primary"  size="small"></Chip>
-        <Chip sx={{m:0.5, borderLeft:2, borderRadius: 0,borderColor:'rgb(255,69,0)',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="14/12/2022" color="primary" size="small"/>
+        <Chip sx={{m:0.5, borderLeft:2, borderRadius: 0,borderColor:'#1976d2',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="DEVBLOG"  color="primary"  size="small"></Chip>
+        <Chip sx={{m:0.5, borderLeft:2, borderRadius: 0,borderColor:'#1976d2',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="14/12/2022" color="primary" size="small"/>
           <Typography sx={{ fontWeight: 'bold',display: 'flex',maxWidth: '180px'}} color='white' gutterBottom variant="overline" component="div" style={{ fontSize: '15px'}}>
            {props.name} 
           </Typography> 

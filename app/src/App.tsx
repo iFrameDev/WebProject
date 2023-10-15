@@ -7,6 +7,7 @@ import NewPages from './pages/NewPages';
 import Login from './pages/Form/login';
 import Register from './pages/Form/register'
 import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
 
 
 import {AuthProvider} from './contexts/AuthProvider'
@@ -38,7 +39,7 @@ export default function App() {
                         <Route path={'/login'} element={<Login />} />
                         <Route path={'/register'} element={<Register />} />
                         <Route path="*" element={<NotFound404 />} />
-                        <Route path="/" element={<Home />} />
+                        <Route path="/" element={<Dashboard />} />
                         <Route path='/Boutique' element={<NewPages title={'DEVBLOG 1 : Motel and locations'.toUpperCase()}/>} />
                     
                     </Routes>
