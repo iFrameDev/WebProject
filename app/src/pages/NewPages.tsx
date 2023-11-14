@@ -20,9 +20,10 @@ const NewPages = (props:propsType) => (
 
     <Box  sx={{ mb:5} }  >
         
-        <Typography sx={{p:1,borderLeft:4, borderColor:'#1976d2'}}  display="block" component="div" style={{ color:'white' ,fontSize: '25px'}} >
+        <Typography sx={{p:1,borderLeft:4, borderColor:'primary.main', fontSize: '96px'}}  display="block" component="div" style={{ color:'white' ,fontSize: '36px'}} >
 
           {props.title} 
+          QoL Updates, Brutalist Building Skin, Weather Events, Turret System Adjustments, SMG buff and more! 
 
         </Typography> 
         

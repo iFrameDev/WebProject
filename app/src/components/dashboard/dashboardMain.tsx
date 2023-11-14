@@ -8,6 +8,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 
+import { useNavigate } from 'react-router-dom'; 
+
 interface TabPanelProps {
   children?: React.ReactNode;
   dir?: string;
@@ -43,6 +45,9 @@ function a11yProps(index: number) {
 }
 
 export default function FullWidthTabs() {
+    const navigate = useNavigate(); 
+
+
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -54,9 +59,13 @@ export default function FullWidthTabs() {
     setValue(index);
   };
 
+  const handleSubmit = () => {
+    navigate('/devcreatepage');  
+  }
+
   return (
-    <Box sx={{  width: 1000, height:500}}>
-      <AppBar sx={{ bgcolor: 'rgb(67 71 77 / 50%)' }} position="static">
+    <Box sx={{  width: '100%', height:500}}>
+      <AppBar sx={{ bgcolor: 'rgb(67 71 77 / 80%)' }} position="static">
         <Tabs
           value={value}
           onChange={handleChange}
@@ -83,50 +92,53 @@ export default function FullWidthTabs() {
           Mes personnages
         </TabPanel>
 
-        <TabPanel value={value} index={2} dir={theme.direction}>
+        <TabPanel value={value} index={2} dir={theme.direction} >
 
-            <Box sx={{m:1, bgcolor: 'rgb(67 71 77 / 50%)'}}>
-                <Typography sx={{m:1, letterSpacing: '.2rem',p:1,borderBottom: 2, borderColor:'#1976d2'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
+            <Box sx={{ }}>
 
-                    Gestion Devblog
+                <Box sx={{m:1,p:1, bgcolor: 'rgb(67 71 77 / 50%)'}}>
+                    <Typography sx={{m:1, letterSpacing: '.1rem',p:1,borderLeft: 3, borderColor:'#e6cd0b', backgroundColor:'rgb(0 0 0 / 13%)'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
 
-                </Typography>
-                <Box sx={{m:1, letterSpacing: '.2rem',p:1}}>
-                    
+                        DEVBLOG
 
-                <Button sx={{m:1, color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
-                        Add new devblog
-                    </Button>
-                    <Button sx={{m:1, color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
-                        Modify devblog
-                    </Button>
-                    <Button sx={{m:1, color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
-                        Delete devblog
-                    </Button>
+                    </Typography>
+                    <Box sx={{m:1, letterSpacing: '.2rem',p:1}}>
+                        
 
+                    <Button onClick={() => handleSubmit()} sx={{p:2, m:1, border:2, color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
+                            Add new devblog
+                        </Button>
+                        <Button sx={{p:2,m:1, border:2,color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
+                            Modify devblog
+                        </Button>
+                        <Button  sx={{p:2,m:1, border:2,color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
+                            Delete devblog
+                        </Button>
+
+                    </Box>
                 </Box>
-            </Box>
 
-            <Box sx={{m:1, bgcolor: 'rgb(67 71 77 / 50%)'}}>
-                <Typography sx={{m:1, letterSpacing: '.2rem',p:1,borderBottom: 2, borderColor:'#1976d2'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
+                <Box sx={{m:1,p:1, bgcolor: 'rgb(67 71 77 / 50%)'}}>
+                    <Typography sx={{m:1, letterSpacing: '.2rem',p:1,borderLeft: 3, borderColor:'#e6cd0b', backgroundColor:'rgb(0 0 0 / 13%)'}}  display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
 
-                    Gestion Member
+                        MEMBERS
 
-                </Typography>
-                <Box sx={{m:1, letterSpacing: '.2rem',p:1}}>
-                    
+                    </Typography>
+                    <Box sx={{m:1, p:1}}>
+                        
 
-                    <Button sx={{m:1, color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
-                        Add new devblog
-                    </Button>
-                    <Button sx={{m:1, color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
-                        Modify devblog
-                    </Button>
-                    <Button sx={{m:1, color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
-                        Delete devblog
-                    </Button>
+                        <Button sx={{p:2,m:1, border:2,color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
+                            Add new devblog
+                        </Button>
+                        <Button sx={{p:2,m:1, border:2,color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
+                            Modify devblog
+                        </Button>
+                        <Button sx={{p:2,m:1, border:2,color:'white', borderColor:'white', width: '100%', borderRadius:0}} variant="outlined" endIcon={<SendIcon />}>
+                            Delete devblog
+                        </Button>
 
 
+                    </Box>
                 </Box>
             </Box>
 

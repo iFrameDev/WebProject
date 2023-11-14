@@ -22,35 +22,7 @@ type CustomTexfieldType ={
 const TextfieldInput = styled(TextField)({
 
 
-  '& label.Mui-focused': {
-    color: 'white',
-  },
-  
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: 'white',
-    },
-    
-    '&:hover fieldset': {
-      borderColor: 'white',
-    },
-    '&.Mui-focused fieldset': {
-      borderColor: 'white',
-      
-    },    
-    'fieldset': {
-      borderColor: 'white',
-    },
-  },
-  '& p':{
-    color:'red',
-  },
-  input: {
-  color: 'white',
-},
-  label: {
-  color: 'white',
-  },
+ 
 
 });
 

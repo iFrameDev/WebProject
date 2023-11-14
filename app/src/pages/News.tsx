@@ -17,7 +17,7 @@ const About = () => (
 
         <Box  sx={{ pb:5} }  >
         
-            <Typography sx={{p:1 ,m:1,borderRight:3, borderColor:'#1976d2'}} display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
+            <Typography sx={{p:1 ,m:1,borderRight:3, borderColor:'#e6cd0b'}} display="block" component="div" style={{ color:'white' ,fontSize: '18px'}} >
 
                 NEWS 
 

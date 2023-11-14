@@ -27,8 +27,8 @@ export default function ActionAreaCard(props:ActionAreaCardProps) {
         />
         <CardContent>
 
-        <Chip sx={{m:0.5, borderLeft:2, borderRadius: 0,borderColor:'#1976d2',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="DEVBLOG"  color="primary"  size="small"></Chip>
-        <Chip sx={{m:0.5, borderLeft:2, borderRadius: 0,borderColor:'#1976d2',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="14/12/2022" color="primary" size="small"/>
+        <Chip sx={{m:0.5, borderLeft:2, borderRadius: 0,borderColor:'#e6cd0b',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="DEVBLOG"  color="primary"  size="small"></Chip>
+        <Chip sx={{m:0.5, borderLeft:2, borderRadius: 0,borderColor:'#e6cd0b',backgroundColor: 'rgb(133 133 133 / 50%)'}} label="14/12/2022" color="primary" size="small"/>
           <Typography sx={{ fontWeight: 'bold',display: 'flex',maxWidth: '180px'}} color='white' gutterBottom variant="overline" component="div" style={{ fontSize: '15px'}}>
            {props.name} 
           </Typography> 

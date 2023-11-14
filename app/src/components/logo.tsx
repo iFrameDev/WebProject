@@ -13,7 +13,7 @@ export default function Logo(){
                             SOCIAL HOME
 
                         </Typography> 
-                        <Typography sx={{textAlign: 'right'}}  display="block" component="div" style={{ color:'rgb(255 255 255 / 54%)' ,fontSize: '28px'}} >
+                        <Typography sx={{textAlign: 'right'}}  display="block" component="div" style={{ color:'#e6cd0b' ,fontSize: '28px'}} >
 
                             THE NEW IDENTITY
 

@@ -8,9 +8,11 @@ import Login from './pages/Form/login';
 import Register from './pages/Form/register'
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
-
-
+import CreateDevblogPages from './pages/devblog/devblogPages';
+import { useNavigate } from 'react-router-dom'; 
+import theme from './components/theme';
 import {AuthProvider} from './contexts/AuthProvider'
+import { ThemeProvider } from '@mui/material/styles';
 
 
 import {
@@ -31,6 +33,8 @@ export default function App() {
 
         <QueryClientProvider client={queryClient}>
             <AuthProvider>
+
+            <ThemeProvider theme={theme}>
                     <ResponsiveAppBar />
 
                     <Routes>
@@ -40,10 +44,11 @@ export default function App() {
                         <Route path={'/register'} element={<Register />} />
                         <Route path="*" element={<NotFound404 />} />
                         <Route path="/" element={<Dashboard />} />
-                        <Route path='/Boutique' element={<NewPages title={'DEVBLOG 1 : Motel and locations'.toUpperCase()}/>} />
+                        <Route path='/Boutique' element={<NewPages title={'Motel and locations'.toUpperCase()}/>} />
+                        <Route path='/devcreatepage' element={<CreateDevblogPages/>}></Route>
                     
                     </Routes>
-
+                    </ThemeProvider>
         
             </AuthProvider>
         </QueryClientProvider>      
