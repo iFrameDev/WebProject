@@ -13,15 +13,16 @@ export default function BasicSelect() {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+    <Box>
+      <FormControl >
         <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
+        <Select 
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={age}
           label="Age"
           onChange={handleChange}
+          
         >
           <MenuItem value={10}>Ten</MenuItem>
           <MenuItem value={20}>Twenty</MenuItem>

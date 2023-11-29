@@ -6,13 +6,11 @@ import NotFound404 from './pages/NotFound404'
 import NewPages from './pages/NewPages';
 import Login from './pages/Form/login';
 import Register from './pages/Form/register'
-import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import CreateDevblogPages from './pages/devblog/devblogPages';
-import { useNavigate } from 'react-router-dom'; 
 import theme from './components/theme';
 import {AuthProvider} from './contexts/AuthProvider'
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider, styled } from '@mui/material/styles';
 
 
 import {
@@ -34,7 +32,7 @@ export default function App() {
         <QueryClientProvider client={queryClient}>
             <AuthProvider>
 
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={theme} >
                     <ResponsiveAppBar />
 
                     <Routes>

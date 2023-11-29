@@ -8,12 +8,12 @@ export default function Logo(){
 
         <Box sx={{ width:'max-content',  p:1, display:{md:'flex', xs: 'none'}, flexDirection:'column'}}>
 
-                        <Typography sx={{}}  display="block" component="div" style={{ color:'white' ,fontSize: '54px'}} >
+                        <Typography sx={{}}  display="block" component="div" style={{ color:'rgb(52, 71, 103)' ,fontSize: '54px'}} >
 
                             SOCIAL HOME
 
                         </Typography> 
-                        <Typography sx={{textAlign: 'right'}}  display="block" component="div" style={{ color:'#e6cd0b' ,fontSize: '28px'}} >
+                        <Typography sx={{textAlign: 'right'}}  display="block" component="div" style={{ color:'rgb(123, 128, 154)' ,fontSize: '28px'}} >
 
                             THE NEW IDENTITY
 

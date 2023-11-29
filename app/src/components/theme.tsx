@@ -1,41 +1,28 @@
-import { yellow } from '@mui/material/colors';
+
 import { createTheme } from '@mui/material/styles';
 
 
 const theme = createTheme({
+  
+
   components: {
+
+    
 
 
     MuiTextField: {
       styleOverrides: {
         root: {
-          '& label.Mui-focused': {
-            color: 'white',
-          },
-          '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-              borderColor: 'white',
-            },
-            '&:hover fieldset': {
-              borderColor: 'white',
-            },
-            '&.Mui-focused fieldset': {
-              borderColor: 'white',
-            },
-            'fieldset': {
-              borderColor: 'white',
-            },
-            
 
-          },
+          
           '& p': {
             color: 'red',
           },
           '& input': {
-            color: 'white',
+            color: 'rgb(52, 71, 103)',
           },
           '& label': {
-            color: 'white',
+            color: 'rgb(52, 71, 103)',
           },
           
           
@@ -49,22 +36,20 @@ const theme = createTheme({
         select: {
             
 
-          color:'white',
+          color:'rgb(52, 71, 103)',
 
           borderColor:'white',
           '&:focus': {
             borderColor: 'white',
           },
           root:{
-            color:'white',
+            color:'rgb(52, 71, 103)',
             'fieldset': {
-                color: 'white',
+                color: 'rgb(52, 71, 103)',
               },
               
           },
-          '&.Mui-focused': {
-            borderColor: 'white', // Remplace la couleur de la bordure en focus
-          },
+
         },
         
 
@@ -74,102 +59,52 @@ const theme = createTheme({
 
       },
     },
+
     MuiInputLabel: {
         styleOverrides: {
+            root:{
+                color:'rgb(52, 71, 103)',
+                
+            },
 
             
           outlined: {
             '&.Mui-focused': {
-              color: 'white', // Couleur de l'étiquette lorsqu'elle est en focus
-              borderColor:'white'
-            },
-            root:{
-                color:'white'
+              color: 'rgb(52, 71, 103)', // Couleur de l'étiquette lorsqu'elle est en focus
+              borderColor:'rgb(52, 71, 103)'
             }
-            
           },
         },
     },
-    MuiInputBase:{
-        styleOverrides: {
-            
 
-            root:{
-                color:'white',
-
-
-            }
-
-              
-
-          },
-
-    },
-    /*MuiOutlinedInput:{
-
-        styleOverrides: {
-
-
-            
-            
-            root:{
-                '&.MuiOutlinedInput-notchedOutline':{
-
-                    borderColor:'white',
-    
-                },
-
-                color:'white',
-                'fieldset': {
-                    color: 'white',
-                  }
-            },
-
-            notchedOutline:{
-                root:{
-                    '&MuiOutlinedInput-notchedOutline':{
-
-                        borderColor:'white',
-        
-                    },
-
-                },
-                '&.MuiOutlinedInput-notchedOutline':{
-
-                    borderColor:'red',
-    
-                },
-                borderColor:'red',
-                '&.Mui-focused': {
-                    color: 'white', // Couleur de l'étiquette lorsqu'elle est en focus
-                    borderColor:'white'
-                  },
-                  'fieldset': {
-                    color: 'white',
-                  },
-                  '&MuiOutlinedInput-notchedOutline':{
-
-                    borderColor:'white',
-    
-                },
-            },
-            
-            
-
-        }
-
-    }*/    
     MuiOutlinedInput: {
+        
         styleOverrides: {
           root: {
+            
+            
+
             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-              borderColor: 'white',
+              borderColor: 'rgb(52, 71, 103)',
               borderWidth: '2px',
             },
+            '&:hover .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'rgb(52, 71, 103)',
+                borderWidth: '2px',
+              },
+
+            'fieldset': {
+                borderColor:'rgb(52, 71, 103)',
+              },
+
+
+            
+            
           },
         },
       },
   },
+  
   
 });
 

@@ -44,13 +44,13 @@ function ResponsiveAppBar() {
 
     return (
         
-        <AppBar  position="static" sx={{mb:9,p:4, bgcolor:'transparent'}} style={{boxShadow: 'none'}} >
+        <AppBar  position="static" sx={{mb:9,p:4, bgcolor:'transparent', }} style={{boxShadow: 'none'}} >
             <Container  maxWidth="xl">
                 <Toolbar disableGutters sx={{display:'flex', justifyContent:'center'}}>
 
                     <Box sx={{display: { xs: 'flex', md: 'none'}, alignItems:'center'}}>
 
-                        <Typography sx={{display: { xs: 'flex', md: 'none', justifyContent: 'center' }}}  component="div" style={{ color:'white' ,fontSize: '30px'}} >
+                        <Typography sx={{display: { xs: 'flex', md: 'none', justifyContent: 'center' }}}  component="div" style={{ color:'rgb(52, 71, 103)' ,fontSize: '30px'}} >
 
                             SOCIAL HOME
 
@@ -110,7 +110,7 @@ function ResponsiveAppBar() {
 
                                     key={page}
                                     onClick={handleCloseNavMenu}
-                                    sx={{  letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: 'white', backgroundColor:'transparent', display: 'block'}}
+                                    sx={{  letterSpacing: '0.125px',fontSize: '15', mx:1, my: 2, color: 'rgb(52, 71, 103)', backgroundColor:'transparent', display: 'block', fontWeight:700}}
                                     >
                                     {page}
 
@@ -144,7 +144,7 @@ function ResponsiveAppBar() {
                        <>
                        <Link to={`/login`} >
                             <Button 
-                                sx={{letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: 'white', display: 'block'}}
+                                sx={{letterSpacing: '0.125px',fontSize: '15', mx:1, my: 2, color: 'rgb(52, 71, 103)', display: 'block', fontWeight:700}}
                             >
                                 Login
                             </Button>
@@ -152,7 +152,7 @@ function ResponsiveAppBar() {
 
                         <Link to={`/register`} >
                             <Button 
-                                sx={{ letterSpacing: '.2rem',fontSize: 12, mx:1, my: 2, color: 'white', display: 'block'}}
+                                sx={{ letterSpacing: '0.125px',fontSize: '15', mx:1, my: 2, color: 'rgb(52, 71, 103)', display: 'block', fontWeight:700}}
                             >
                                 Sign up
                             </Button>
